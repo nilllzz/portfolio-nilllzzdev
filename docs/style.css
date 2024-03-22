@@ -26,6 +26,44 @@ body {
     align-items: center;
     height: 100%;
     width: 100%;
+
+    animation-name: main-content-in-anim;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+
+@keyframes main-content-in-anim {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes main-content-in-anim-sm {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: none;
+        opacity: 1;
+    }
 }
 
 .main-content {
@@ -90,6 +128,11 @@ h1>.h1-subline {
 
 a {
     color: var(--link-color);
+    text-decoration-style: dotted;
+}
+
+a:hover {
+    text-decoration-style: solid;
 }
 
 .social-btn {
@@ -121,6 +164,8 @@ a {
     .main-content-container {
         display: block;
         height: auto;
+        animation-name: main-content-in-anim-sm;
+        animation-duration: 0.2s;
     }
 
     .main-content {
