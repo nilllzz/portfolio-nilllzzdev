@@ -1,0 +1,133 @@
+:root {
+    --the-blue: rgb(54, 131, 151);
+    --the-dark: #1f2a2e;
+    --the-lighter: #28363b;
+    --the-lightest: #465a61;
+    --text-color: rgb(221, 220, 174);
+    --link-color: rgb(241, 241, 230);
+    --text-muted: rgba(221, 220, 174, 0.5);
+}
+
+html {
+    background: radial-gradient(circle, rgb(194, 192, 117) 0%, rgb(54, 131, 151) 100%);
+    height: 100%;
+    font-family: Inter, sans-serif;
+}
+
+body {
+
+    height: 100%;
+    margin: 0;
+}
+
+.main-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.main-content {
+    max-width: 500px;
+    width: 100%;
+    background-color: var(--the-lighter);
+    border-radius: 32px;
+    /* min-height: 400px; */
+    overflow: hidden;
+    filter: drop-shadow(0 0 40px rgb(15, 52, 61));
+    color: var(--text-color);
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+.content {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.content:first-child {
+    padding-top: 32px;
+    margin-top: 0;
+}
+
+.content:last-child {
+    padding-bottom: 32px;
+    padding-top: 32px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.content-dark {
+    background-color: var(--the-dark);
+}
+
+.pfp {
+    display: block;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: var(--text-color);
+    border-width: 8px;
+    width: 128px;
+    height: 128px;
+    filter: drop-shadow(0 0 32px rgba(0, 0, 0, 0.5));
+}
+
+h1 {
+    margin: 0;
+    font-size: 48px;
+}
+
+h1>.h1-subline {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: -8px;
+}
+
+a {
+    color: var(--link-color);
+}
+
+.social-btn {
+    border-radius: 50%;
+    background-color: var(--the-lighter);
+    color: var(--text-color);
+    font-size: 24px;
+    display: inline-flex;
+    width: 56px;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    cursor: pointer;
+
+    transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+.social-btn:hover {
+    transform: scale(1.1);
+    background-color: var(--the-lightest);
+}
+
+@media (max-width: 500px) {
+    body {
+        height: auto;
+    }
+
+    .main-content-container {
+        display: block;
+        height: auto;
+    }
+
+    .main-content {
+        width: calc(100% - 16px);
+
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-top: 8px;
+    }
+}
