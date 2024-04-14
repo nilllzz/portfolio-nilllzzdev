@@ -15,7 +15,6 @@ html {
 }
 
 body {
-
     height: 100%;
     margin: 0;
 }
@@ -24,7 +23,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
 
     animation-name: main-content-in-anim;
@@ -32,6 +31,11 @@ body {
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     animation-timing-function: ease-out;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    box-sizing: border-box;
 }
 
 @keyframes main-content-in-anim {
@@ -166,6 +170,8 @@ a:hover {
         height: auto;
         animation-name: main-content-in-anim-sm;
         animation-duration: 0.2s;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .main-content {
