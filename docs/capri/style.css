@@ -164,7 +164,7 @@ dialog {
 
 @keyframes dialog-anim-in {
   from {
-    transform: rotate3d(1, 0, 0, 30deg);
+    transform: rotate3d(1, 0, 0, 20deg);
     opacity: 0;
   }
   to {
