@@ -193,3 +193,40 @@ dialog em {
   color: var(--color-capri-blue-tone2);
   font-style: normal;
 }
+
+hr {
+  margin-top: 20px;
+  border-color: var(--color-capri-black);
+}
+
+.detailsNavButtons {
+  display: flex;
+  justify-content: space-around;
+
+  margin-top: 20px;
+}
+
+.detailsNavButtons > button {
+  background-color: var(--color-capri-black);
+  color: var(--color-capri-white);
+
+  border: none;
+  border-radius: 12px;
+
+  padding: 10px 20px;
+
+  cursor: pointer;
+
+  transition: background-color 0.1s ease, color 0.1s ease;
+
+  min-height: 60px;
+
+  width: 100%;
+  max-width: min(200px, 40%);
+  font-weight: bold;
+}
+
+.detailsNavButtons > button:hover {
+  background-color: var(--color-capri-black-tone2);
+  color: var(--color-capri-blue);
+}

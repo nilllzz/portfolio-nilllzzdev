@@ -75,7 +75,7 @@
       </div>
     </div>
 
-    <dialog id="detailsDialog">DIALOG</dialog>
+    <dialog id="detailsDialog"></dialog>
 
     <template id="poi-jaw">
       <h2>Jaw and Teeth</h2>
@@ -123,6 +123,18 @@
       >
         <i class="bi bi-x-circle"></i>
       </button>
+    </template>
+
+    <template id="detailsNavButtons">
+      <hr />
+      <div class="detailsNavButtons">
+        <button>
+          <i class="bi bi-arrow-left"></i>
+        </button>
+        <button onclick="viewNextPoi()">
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
     </template>
 
     <script src="./index.js" lang="js"></script>
