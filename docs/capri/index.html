@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Capri's character sheet" />
+    <meta charset="utf-8" />
+    <title>Capri - nilllzz.dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="nilllzz" />
+
+    <!-- Open Graph tags -->
+    <meta property="og:site_name" content="Capri's character sheet" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Capri's character sheet" />
+    <meta property="og:description" content="Capri - the Thresher Shark" />
+    <meta property="og:image" content="https://nilllzz.dev/img/og_image.jpg" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="540" />
+    <meta property="og:url" content="https://nilllzz.dev/capri" />
+    <meta property="profile:username" content="nilllzz" />
+
+    <!-- Twitter tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Capri's character sheet" />
+    <meta
+      property="twitter:description"
+      content="I am a fullstack software engineer, I love designing and implementing websites"
+    />
+    <meta property="twitter:url" content="https://nilllzz.dev" />
+    <meta
+      property="twitter:image"
+      content="https://nilllzz.dev/img/og_image.jpg"
+    />
+    <meta property="twitter:site" content="@nilllzz" />
+    <meta property="twitter:creator" content="@nilllzz" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+
+  <body>
+    <div class="main">
+      <img src="./img/name.png" class="nameImg" />
+
+      <div class="capriContainer">
+        <img src="./img/capri.png" class="capri" />
+
+        <!-- Jaw -->
+        <span
+          class="poi"
+          style="top: 20%; left: 25%"
+          data-poi="jaw"
+          onclick="openDetails(event)"
+          title="Jaw and Teeth"
+        ></span>
+        <!-- Eyes -->
+        <span
+          class="poi"
+          style="top: 15.5%; left: 28%"
+          data-poi="eyes"
+          onclick="openDetails(event)"
+          title="Eyes"
+        ></span>
+        <!-- Tail -->
+        <span
+          class="poi"
+          style="top: 40%; left: 75%"
+          data-poi="tail"
+          onclick="openDetails(event)"
+          title="Tail and Tail fins"
+        ></span>
+      </div>
+    </div>
+
+    <dialog id="detailsDialog">DIALOG</dialog>
+
+    <template id="poi-jaw">
+      <h2>Jaw and Teeth</h2>
+      <p>
+        <strong>Be careful</strong>, <em>Capri</em>'s strong jaw and sharp teeth
+        can easily tear through solid steel.
+      </p>
+      <p>
+        <em>Capri</em> possessses two rows of teeth. Teeth lost can be regrown
+        within a week's time.
+      </p>
+      <img src="./img/jaw.png" style="max-width: 200px" />
+    </template>
+
+    <template id="detailsDialogClose">
+      <button
+        class="detailsCloseButton"
+        onclick="closeDetailsModal()"
+        title="Close (ESC)"
+      >
+        <i class="bi bi-x-circle"></i>
+      </button>
+    </template>
+
+    <script src="./index.js" lang="js"></script>
+  </body>
+</html>

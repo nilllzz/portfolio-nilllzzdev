@@ -1,0 +1,176 @@
+@font-face {
+  font-family: "Capriola";
+  src: url("./fonts/Capriola-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Marker";
+  src: url("./fonts/marker.ttf") format("truetype");
+}
+
+:root {
+  --color-capri-white: #edf2ff;
+  --color-capri-brown: #b97a57;
+  --color-capri-brown-tone2: #ab6d4c;
+  --color-capri-black: #323d47;
+  --color-capri-black-tone2: #222c34;
+  --color-capri-blue: #59a5c6;
+  --color-capri-blue-tone2: #4b8eab;
+  --color-capri-pink: #ffc6c3;
+  --color-capri-beige: #ffe6b5;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(0.25turn, #fff2a4, #f3e595);
+  background-color: #fff2a4;
+
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+
+  height: 100vh;
+
+  font-family: "Capriola", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Marker", sans-serif;
+}
+
+h2:before {
+  content: "~ ";
+}
+
+h2:after {
+  content: " ~";
+}
+
+.main {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nameImg {
+  height: 20%;
+  display: block;
+}
+
+.capriContainer {
+  height: 70%;
+  display: block;
+  position: relative;
+}
+
+.capri {
+  height: 100%;
+}
+
+.poi {
+  position: absolute;
+
+  opacity: 0.15;
+
+  min-width: 10px;
+  width: calc(100% * 0.03);
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-capri-white);
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--color-capri-black-tone2);
+
+  cursor: pointer;
+
+  transition: opacity 0.1s ease, transform 0.1s ease, background-color 0.1s ease;
+}
+
+.capriContainer:hover .poi {
+  opacity: 0.75;
+}
+
+.poi:hover {
+  opacity: 1 !important;
+  transform: scale(2);
+  background-color: var(--color-capri-blue);
+}
+
+/* Always show pois at 0.5 opacity for touchscreens */
+@media (pointer: coarse) {
+  .poi {
+    opacity: 0.5 !important;
+  }
+}
+
+/* Dialog styles */
+
+.detailsCloseButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  background-color: var(--color-capri-black);
+  color: var(--color-capri-white);
+
+  font-size: 20px;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: background-color 0.1s ease;
+
+  width: 32px;
+  height: 32px;
+}
+
+.detailsCloseButton:hover {
+  background-color: var(--color-capri-black-tone2);
+  color: var(--color-capri-blue);
+}
+
+dialog {
+  max-width: min(95%, 620px);
+  max-height: min(75%, 600px);
+  box-sizing: border-box;
+
+  background-color: var(--color-capri-white);
+  color: var(--color-capri-black-tone2);
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--color-capri-black);
+  border-radius: 12px;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(5px);
+}
+
+dialog img {
+  max-width: 90%;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+dialog h2 {
+  text-align: center;
+}
+
+dialog em {
+  color: var(--color-capri-blue-tone2);
+  font-style: normal;
+}
