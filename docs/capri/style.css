@@ -80,6 +80,8 @@ h2:after {
 
 .poi {
   position: absolute;
+  padding: 0;
+  box-sizing: content-box;
 
   opacity: 0.15;
 
@@ -101,7 +103,8 @@ h2:after {
   opacity: 0.75;
 }
 
-.poi:hover {
+.poi:hover,
+.poi:focus {
   opacity: 1 !important;
   transform: scale(2);
   background-color: var(--color-capri-blue);
@@ -183,7 +186,7 @@ dialog::backdrop {
 }
 
 dialog img {
-  max-width: 90%;
+  max-width: min(200px, 90%);
 
   display: block;
   margin-left: auto;
@@ -222,18 +225,27 @@ hr {
 
   cursor: pointer;
 
-  transition: background-color 0.1s ease, color 0.1s ease;
+  transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease,
+    filter 0.1s ease;
 
   min-height: 60px;
 
   width: 100%;
   max-width: min(200px, 40%);
-  font-weight: bold;
+  font-size: 14px;
+  font-family: "Capriola";
 }
 
 .detailsNavButtons > button:hover {
   background-color: var(--color-capri-black-tone2);
   color: var(--color-capri-blue);
+  filter: drop-shadow(
+    0 0 5px color-mix(in hsl, var(--color-capri-black), transparent 50%)
+  );
+}
+
+.detailsNavButtons > button:active {
+  transform: translateY(2px);
 }
 
 .img-title {
@@ -241,4 +253,10 @@ hr {
   color: var(--color-capri-black);
   text-align: center;
   font-style: italic;
+}
+
+dialog a {
+  color: var(--color-capri-brown-tone2);
+  text-decoration: underline;
+  cursor: pointer;
 }
