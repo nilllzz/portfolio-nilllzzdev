@@ -150,6 +150,7 @@ dialog {
 
   background-color: var(--color-capri-white);
   color: var(--color-capri-black-tone2);
+  line-height: 1.5rem;
 
   border-width: 2px;
   border-style: solid;
@@ -160,6 +161,10 @@ dialog {
   animation-duration: 0.35s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+
+  filter: drop-shadow(
+    0 0 10px color-mix(in hsl, var(--color-capri-black), transparent 50%)
+  );
 }
 
 @keyframes dialog-anim-in {
@@ -229,4 +234,11 @@ hr {
 .detailsNavButtons > button:hover {
   background-color: var(--color-capri-black-tone2);
   color: var(--color-capri-blue);
+}
+
+.img-title {
+  font-size: 11px;
+  color: var(--color-capri-black);
+  text-align: center;
+  font-style: italic;
 }

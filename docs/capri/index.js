@@ -69,3 +69,9 @@ function viewNextPoi() {
   const nextIndex = (currentIndex + 1) % allPois.length;
   showPoi(allPois[nextIndex]);
 }
+
+function viewPrevPoi() {
+  const currentIndex = allPois.indexOf(currentPoi);
+  const nextIndex = (currentIndex - 1 + allPois.length) % allPois.length;
+  showPoi(allPois[nextIndex]);
+}

@@ -64,6 +64,22 @@
           onclick="openDetails(event)"
           title="Eyes"
         ></span>
+        <!-- Antlers -->
+        <span
+          class="poi"
+          style="top: 3%; left: 35%"
+          data-poi="antlers"
+          onclick="openDetails(event)"
+          title="Antlers"
+        ></span>
+        <!-- Ears -->
+        <span
+          class="poi"
+          style="top: 10%; left: 39%"
+          data-poi="ears"
+          onclick="openDetails(event)"
+          title="Ears"
+        ></span>
         <!-- Tail -->
         <span
           class="poi"
@@ -71,6 +87,46 @@
           data-poi="tail"
           onclick="openDetails(event)"
           title="Tail and Tail fins"
+        ></span>
+        <!-- Wingflaps -->
+        <span
+          class="poi"
+          style="top: 47%; left: 18%"
+          data-poi="wingflaps"
+          onclick="openDetails(event)"
+          title="Wingflaps"
+        ></span>
+        <!-- Scars -->
+        <span
+          class="poi"
+          style="top: 37%; left: 40%"
+          data-poi="scars"
+          onclick="openDetails(event)"
+          title="Scars and Damage"
+        ></span>
+        <!-- Paws -->
+        <span
+          class="poi"
+          style="top: 27%; left: 7%"
+          data-poi="paws"
+          onclick="openDetails(event)"
+          title="Paws"
+        ></span>
+        <!-- Arms/Legs -->
+        <span
+          class="poi"
+          style="top: 60%; left: 40%"
+          data-poi="arms-legs"
+          onclick="openDetails(event)"
+          title="Arms and Legs"
+        ></span>
+        <!-- Lower legs -->
+        <span
+          class="poi"
+          style="top: 80%; left: 24%"
+          data-poi="lower-legs"
+          onclick="openDetails(event)"
+          title="Lower Legs"
         ></span>
       </div>
     </div>
@@ -96,10 +152,19 @@
         them even in deep waters.
       </p>
       <img src="./img/eyes.png" style="max-width: 200px" />
+      <div class="img-title">Large, expressive eyes. Blue-gray in color</div>
       <p>
         Combined with advanced echolocation, once <em>Capri</em> has set his
         sights on a target, there is no escape.
       </p>
+    </template>
+    <template id="poi-antlers">
+      <h2>Antlers</h2>
+      <p>CONTENT</p>
+    </template>
+    <template id="poi-ears">
+      <h2>Ears</h2>
+      <p>CONTENT</p>
     </template>
     <template id="poi-tail">
       <h2>Tail and Tail Fins</h2>
@@ -113,6 +178,26 @@
         unimpeded even through the toughest currents.
       </p>
       <img src="./img/tail.png" style="max-width: 400px; margin-top: 20px" />
+    </template>
+    <template id="poi-wingflaps">
+      <h2>Wingflaps</h2>
+      <p>CONTENT</p>
+    </template>
+    <template id="poi-scars">
+      <h2>Scars and Damage</h2>
+      <p>CONTENT</p>
+    </template>
+    <template id="poi-paws">
+      <h2>Paws</h2>
+      <p>CONTENT</p>
+    </template>
+    <template id="poi-arms-legs">
+      <h2>Arms and Legs</h2>
+      <p>CONTENT</p>
+    </template>
+    <template id="poi-lower-legs">
+      <h2>Lower Legs</h2>
+      <p>CONTENT</p>
     </template>
 
     <template id="detailsDialogClose">
@@ -128,7 +213,7 @@
     <template id="detailsNavButtons">
       <hr />
       <div class="detailsNavButtons">
-        <button>
+        <button onclick="viewPrevPoi()">
           <i class="bi bi-arrow-left"></i>
         </button>
         <button onclick="viewNextPoi()">
