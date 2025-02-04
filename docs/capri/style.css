@@ -20,6 +20,15 @@
   --color-capri-beige: #ffe6b5;
 }
 
+*::selection {
+  background-color: color-mix(
+    in hsl,
+    var(--color-capri-black),
+    transparent 75%
+  );
+  color: var(--color-capri-black);
+}
+
 body {
   margin: 0;
   background: linear-gradient(0.25turn, #fff2a4, #f3e595);
@@ -66,6 +75,20 @@ h2:after {
 .nameImg {
   height: 20%;
   display: block;
+  cursor: pointer;
+
+  transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+.nameImg:hover {
+  transform: scale(1.1) rotateZ(-5deg);
+  filter: drop-shadow(
+    0 0 5px color-mix(in hsl, var(--color-capri-black-tone2), transparent 10%)
+  );
+}
+
+.nameImg:active {
+  transform: scale(0.8) rotateZ(-5deg);
 }
 
 .capriContainer {
@@ -148,7 +171,7 @@ h2:after {
 dialog {
   width: 100%;
   max-width: min(95%, 620px);
-  max-height: min(75%, 600px);
+  max-height: min(75%, 900px);
   box-sizing: border-box;
 
   background-color: var(--color-capri-white);
@@ -214,7 +237,7 @@ hr {
   margin-top: 20px;
 }
 
-.detailsNavButtons > button {
+.btn {
   background-color: var(--color-capri-black);
   color: var(--color-capri-white);
 
@@ -236,7 +259,7 @@ hr {
   font-family: "Capriola";
 }
 
-.detailsNavButtons > button:hover {
+.btn:hover {
   background-color: var(--color-capri-black-tone2);
   color: var(--color-capri-blue);
   filter: drop-shadow(
@@ -244,7 +267,7 @@ hr {
   );
 }
 
-.detailsNavButtons > button:active {
+.btn:active {
   transform: translateY(2px);
 }
 

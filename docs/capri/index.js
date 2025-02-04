@@ -11,9 +11,20 @@ const allPoiTitles = Array.from(allPoiEls)
 
 let currentPoi = "";
 
+// Show intro modal on first visit.
+if (!localStorage.getItem("visited")) {
+  localStorage.setItem("visited", "1");
+  showDetailsModal("capriInfo");
+} else if (window.location.hash) {
+  // Show POI if hash is set in URL.
+  const hash = window.location.hash.substring(1);
+  if (allPois.includes(hash)) {
+    showPoi(hash);
+  }
+}
+
 function openDetails(e) {
-  const target = e.target;
-  const poiType = target.getAttribute("data-poi");
+  const poiType = e.target.getAttribute("data-poi");
   if (!poiType) {
     return;
   }
@@ -41,6 +52,9 @@ function showPoi(poiType) {
   buttons[1].innerHTML = `${nextPoiTitle} <i class="bi bi-arrow-right"></i>`;
 
   detailsDialogEl.appendChild(navButtonsClone);
+
+  // Set the hash to the current POI.
+  window.location.hash = currentPoi;
 }
 
 function showDetailsModal(copyFromId) {
@@ -61,6 +75,7 @@ function showDetailsModal(copyFromId) {
 }
 
 function closeDetailsModal() {
+  window.location.hash = "";
   detailsDialogEl.close();
 }
 

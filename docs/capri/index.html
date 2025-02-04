@@ -46,7 +46,12 @@
 
   <body>
     <div class="main">
-      <img src="./img/name.png" class="nameImg" alt="Capri's name" />
+      <img
+        src="./img/name.png"
+        class="nameImg"
+        alt="Capri's name"
+        onclick="showDetailsModal('capriInfo')"
+      />
 
       <div class="capriContainer">
         <img src="./img/capri.png" class="capri" alt="Capri full body" />
@@ -147,7 +152,14 @@
     </template>
     <template id="poi-ears">
       <h2>Ears</h2>
+      <p>
+        <em>Capri</em>'s long ears allow for advanced hearing out of water and
+        on the surface.
+      </p>
       <img src="./img/ears.png" alt="Capri's ears" />
+      <div class="img-title">
+        His left ear is <a onclick="showPoi('scars')">chipped</a>.
+      </div>
     </template>
     <template id="poi-eyes">
       <h2>Eyes</h2>
@@ -168,6 +180,10 @@
         <strong>Be careful</strong>, <em>Capri</em>'s strong jaw and sharp teeth
         can easily tear through solid steel.
       </p>
+      <img
+        src="./img/double_teeth.png"
+        alt="Capri's head side profile with open mouth"
+      />
       <p>
         <em>Capri</em> possessses two rows of teeth. Teeth lost can be regrown
         within a week's time.
@@ -176,11 +192,28 @@
     </template>
     <template id="poi-paws">
       <h2>Paws</h2>
-      <p>CONTENT</p>
+      <p>
+        <em>Capri</em>'s webbed paws help swimming on the water surface while
+        providing superior grip strength.
+      </p>
+      <img src="./img/paws.png" alt="Paw" />
+      <p>Retractable nails on paw digits allow for clawing.</p>
     </template>
     <template id="poi-scars">
       <h2>Scars and Damage</h2>
-      <p>CONTENT</p>
+      <p>
+        <em>Capri</em> sustained a scar to his left pec and a chip to his left
+        ear during a territorial struggle with the local dragon.
+      </p>
+      <img src="./img/ear_scar.png" alt="Capri's ear chip" />
+      <div class="img-title"><strong>Close up:</strong> Chipped left ear</div>
+      <br />
+      <img
+        src="./img/chest_scar.png"
+        alt="Capri's chest scar"
+        style="border: 2px solid var(--color-capri-black); border-radius: 8px"
+      />
+      <div class="img-title"><strong>Close up:</strong> Scar on left pec</div>
     </template>
     <template id="poi-tail">
       <h2>Tail and Tail Fins</h2>
@@ -198,6 +231,11 @@
         style="max-width: min(400px, 90%); margin-top: 30px"
         alt="Capri's tail and tail fins"
       />
+      <p>
+        <em>Capri</em>'s tail is warm and soft to the touch. He likes to gently
+        wrap it around you during a hug.
+      </p>
+      <img src="./img/hug.png" alt="Capri hug" />
     </template>
     <template id="poi-wingflaps">
       <h2>Wingflaps</h2>
@@ -212,11 +250,24 @@
     </template>
     <template id="poi-arms-legs">
       <h2>Arms and Legs</h2>
-      <p>CONTENT</p>
+      <p>
+        Strong arms and legs that can be perfectly folded into the body for
+        better hydrodynamics.<br />
+        During diving and swimming the
+        <a onclick="showPoi('tail')">tail</a> takes over.
+      </p>
+      <p>The same applies during air gliding.</p>
     </template>
     <template id="poi-lower-legs">
       <h2>Lower Legs</h2>
-      <p>CONTENT</p>
+      <p>
+        The lower legs resemble canine legs, with a digitigrade stance and large
+        paws.
+      </p>
+      <p>
+        Muscular calves and thighs provide the necessary power for jumping and
+        running.
+      </p>
     </template>
 
     <template id="detailsDialogClose">
@@ -232,12 +283,39 @@
     <template id="detailsNavButtons">
       <hr />
       <div class="detailsNavButtons">
-        <button onclick="viewPrevPoi()">
+        <button class="btn" onclick="viewPrevPoi()">
           <i class="bi bi-arrow-left"></i>
         </button>
-        <button onclick="viewNextPoi()">
+        <button class="btn" onclick="viewNextPoi()">
           <i class="bi bi-arrow-right"></i>
         </button>
+      </div>
+    </template>
+
+    <template id="capriInfo">
+      <img src="./img/hi.png" alt="Capri full body" />
+      <div class="img-title">
+        Art by
+        <a
+          href="https://bsky.app/profile/bluerhapsodyy.bsky.social"
+          onclick="return confirm(`The linked artist's profile may contain labeled NSFW content. Proceed?`)"
+          >BlueRhapsodyy</a
+        >
+      </div>
+      <p>
+        Hello and welcome to <em>Capri</em>'s little corner of the internet!
+      </p>
+      <p>
+        <em>Capri</em> is a <strong>Thresher Shark</strong>, a species known for
+        their long tails and goofy eyes.
+      </p>
+      <p>
+        Close this modal to explore <em>Capri</em>'s features in more detail.<br />
+        If you are looking for a ref sheet, click
+        <a href="./img/ref.png" target="_blank">here</a>.
+      </p>
+      <div style="display: flex; justify-content: center">
+        <button class="btn" onclick="closeDetailsModal()">Close (ESC)</button>
       </div>
     </template>
 
