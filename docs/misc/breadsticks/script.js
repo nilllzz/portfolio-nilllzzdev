@@ -16,7 +16,6 @@ function resetSticks() {
 resetSticks();
 
 function onClickStick(e) {
-  // play sound/crunch.mp3
   const audio = new Audio("./sound/crunch.mp3");
   audio.play();
 
