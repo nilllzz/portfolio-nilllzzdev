@@ -62,6 +62,22 @@ const gallery = [
       name: "Natezacate",
     },
   },
+  {
+    title: "Angy",
+    imgUrl: "angy.png",
+    author: {
+      name: "BlueRhapsodyy",
+      url: "https://bsky.app/profile/bluerhapsodyy.bsky.social",
+    },
+  },
+  {
+    title: "Amogus",
+    imgUrl: "amogus.png",
+    author: {
+      name: "JulianDough",
+      url: "https://juliandoes.art",
+    },
+  },
 ];
 
 const galleryItemTemplate = document.getElementById("galleryItemTemplate");

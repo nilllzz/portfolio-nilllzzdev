@@ -300,7 +300,7 @@ dialog a {
 }
 
 .galleryImage {
-  max-width: 200px;
+  width: 200px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   display: block;
@@ -339,6 +339,7 @@ dialog a {
 
 @media (max-width: 600px) {
   .galleryImage {
+    width: auto;
     max-width: 120px;
   }
 }
