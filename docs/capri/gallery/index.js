@@ -78,6 +78,70 @@ const gallery = [
       url: "https://juliandoes.art",
     },
   },
+
+  {
+    title: "Nodding",
+    imgUrl: "capri_bopbop_2_l_square.gif",
+    author: {
+      name: "BlueRhapsodyy",
+      url: "https://bsky.app/profile/bluerhapsodyy.bsky.social",
+    },
+  },
+  {
+    title: "Flooshed",
+    imgUrl: "flooshed_square.png",
+    author: {
+      name: "BlueRhapsodyy",
+      url: "https://bsky.app/profile/bluerhapsodyy.bsky.social",
+    },
+  },
+  {
+    title: "Hi! Doodle",
+    imgUrl: "racc_doodle.png",
+    author: {
+      name: "ImJustRacc",
+    },
+  },
+  {
+    title: "RAHHHH!",
+    imgUrl: "rah_square.png",
+    author: {
+      name: "BlueRhapsodyy",
+      url: "https://bsky.app/profile/bluerhapsodyy.bsky.social",
+    },
+  },
+  {
+    title: "Stare...",
+    imgUrl: "stare2_square.png",
+    author: {
+      name: "BlueRhapsodyy",
+      url: "https://bsky.app/profile/bluerhapsodyy.bsky.social",
+    },
+  },
+  {
+    title: "'tism",
+    imgUrl: "tism_square.png",
+    author: {
+      name: "BlueRhapsodyy",
+      url: "https://bsky.app/profile/bluerhapsodyy.bsky.social",
+    },
+  },
+  {
+    title: "WAAAAAHHH *sniff*",
+    imgUrl: "waaaaaahhhh_square.png",
+    author: {
+      name: "BlueRhapsodyy",
+      url: "https://bsky.app/profile/bluerhapsodyy.bsky.social",
+    },
+  },
+  {
+    title: "AAAARRRGGHHH",
+    imgUrl: "aaaarrrgghhh.png",
+    author: {
+      name: "BlueRhapsodyy",
+      url: "https://bsky.app/profile/bluerhapsodyy.bsky.social",
+    },
+  },
 ];
 
 const galleryItemTemplate = document.getElementById("galleryItemTemplate");

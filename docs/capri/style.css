@@ -296,11 +296,12 @@ dialog a {
 }
 
 .galleryItem {
+  width: 200px;
   flex-shrink: 0;
 }
 
 .galleryImage {
-  width: 200px;
+  width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   display: block;
@@ -325,6 +326,10 @@ dialog a {
   width: 100%;
 }
 
+.galleryTitle {
+  overflow-wrap: anywhere;
+}
+
 .galleryTitle > small {
   color: var(--color-capri-black);
   font-style: italic;
@@ -338,6 +343,11 @@ dialog a {
 }
 
 @media (max-width: 600px) {
+  .galleryItem {
+    width: auto;
+    max-width: 120px;
+  }
+
   .galleryImage {
     width: auto;
     max-width: 120px;
