@@ -1,83 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="description" content="Capri's character sheet" />
-    <meta charset="utf-8" />
-    <title>Capri's Gallery - nilllzz.dev</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="nilllzz" />
+    <head>
+        <meta name="description" content="Capri's character sheet" />
+        <meta charset="utf-8" />
+        <title>Capri's Gallery - nilllzz.dev</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="nilllzz" />
+        <meta name="theme-color" content="#4a7c88" />
 
-    <!-- Open Graph tags -->
-    <meta property="og:site_name" content="Capri's character sheet" />
-    <meta property="og:type" content="profile" />
-    <meta property="og:title" content="Capri's Gallery" />
-    <meta property="og:description" content="Capri - the Thresher Shark" />
-    <meta
-      property="og:image"
-      content="https://nilllzz.dev/capri/img/og_image.jpg"
-    />
-    <meta property="og:image:width" content="1000" />
-    <meta property="og:image:height" content="540" />
-    <meta property="og:url" content="https://nilllzz.dev/capri" />
-    <meta property="profile:username" content="nilllzz" />
+        <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Capri's character sheet" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:title" content="Capri's Gallery" />
+        <meta property="og:description" content="Capri - the Thresher Shark" />
+        <meta property="og:image" content="https://nilllzz.dev/capri/img/og_image.jpg" />
+        <meta property="og:image:width" content="1000" />
+        <meta property="og:image:height" content="540" />
+        <meta property="og:url" content="https://nilllzz.dev/capri" />
+        <meta property="profile:username" content="nilllzz" />
 
-    <!-- Twitter tags -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Capri's character sheet" />
-    <meta
-      property="twitter:description"
-      content="I am a fullstack software engineer, I love designing and implementing websites"
-    />
-    <meta property="twitter:url" content="https://nilllzz.dev" />
-    <meta
-      property="twitter:image"
-      content="https://nilllzz.dev/capri/img/og_image.jpg"
-    />
-    <meta property="twitter:site" content="@nilllzz" />
-    <meta property="twitter:creator" content="@nilllzz" />
+        <!-- Twitter tags -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Capri's character sheet" />
+        <meta
+            property="twitter:description"
+            content="I am a fullstack software engineer, I love designing and implementing websites"
+        />
+        <meta property="twitter:url" content="https://nilllzz.dev" />
+        <meta property="twitter:image" content="https://nilllzz.dev/capri/img/og_image.jpg" />
+        <meta property="twitter:site" content="@nilllzz" />
+        <meta property="twitter:creator" content="@nilllzz" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
-  </head>
-  <body>
-    <div>
-      <h1 style="text-align: center; margin-bottom: 48px">Capri's Gallery</h1>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    </head>
+    <body>
+        <div>
+            <h1 style="text-align: center; margin-bottom: 48px">Capri's Gallery</h1>
 
-      <div class="gallery" id="gallery">
-        <noscript>Please enable Javascript to load the gallery.</noscript>
-      </div>
+            <div class="gallery" id="gallery">
+                <noscript>Please enable Javascript to load the gallery.</noscript>
+            </div>
 
-      <template id="galleryItemTemplate">
-        <div class="galleryItem">
-          <a
-            data-id="imageLink"
-            class="galleryImage"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img loading="lazy" data-id="image" />
-          </a>
-          <div>
-            <span class="galleryTitle" data-id="title"></span>
-          </div>
-          <div>
-            <span class="galleryAuthor">by</span>
-            <a
-              class="galleryAuthor"
-              data-id="author"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-            </a>
-          </div>
+            <template id="galleryItemTemplate">
+                <div class="galleryItem">
+                    <a
+                        data-id="imageLink"
+                        class="galleryImage"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img loading="lazy" data-id="image" />
+                    </a>
+                    <div>
+                        <span class="galleryTitle" data-id="title"></span>
+                    </div>
+                    <div>
+                        <span class="galleryAuthor">by</span>
+                        <a
+                            class="galleryAuthor"
+                            data-id="author"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                        </a>
+                    </div>
+                </div>
+            </template>
+
+            <script src="./index.js"></script>
         </div>
-      </template>
-
-      <script src="./index.js"></script>
-    </div>
-  </body>
+    </body>
 </html>

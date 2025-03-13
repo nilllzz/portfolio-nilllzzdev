@@ -1,49 +1,45 @@
 @font-face {
-  font-family: "Capriola";
-  src: url("./fonts/Capriola-Regular.ttf") format("truetype");
+    font-family: "Capriola";
+    src: url("./fonts/Capriola-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Marker";
-  src: url("./fonts/marker.ttf") format("truetype");
+    font-family: "Marker";
+    src: url("./fonts/marker.ttf") format("truetype");
 }
 
 :root {
-  --color-capri-white: #edf2ff;
-  --color-capri-brown: #b97a57;
-  --color-capri-brown-tone2: #ab6d4c;
-  --color-capri-black: #323d47;
-  --color-capri-black-tone2: #222c34;
-  --color-capri-blue: #59a5c6;
-  --color-capri-blue-tone2: #4b8eab;
-  --color-capri-pink: #ffc6c3;
-  --color-capri-beige: #ffe6b5;
+    --color-capri-white: #edf2ff;
+    --color-capri-brown: #b97a57;
+    --color-capri-brown-tone2: #ab6d4c;
+    --color-capri-black: #323d47;
+    --color-capri-black-tone2: #222c34;
+    --color-capri-blue: #59a5c6;
+    --color-capri-blue-tone2: #4b8eab;
+    --color-capri-pink: #ffc6c3;
+    --color-capri-beige: #ffe6b5;
 }
 
 *::selection {
-  background-color: color-mix(
-    in hsl,
-    var(--color-capri-black),
-    transparent 75%
-  );
-  color: var(--color-capri-black);
+    background-color: color-mix(in hsl, var(--color-capri-black), transparent 75%);
+    color: var(--color-capri-black);
 }
 
 body {
-  margin: 0;
-  background: linear-gradient(0.25turn, #fff2a4, #f3e595);
-  background-color: #fff2a4;
+    margin: 0;
+    background: linear-gradient(0.25turn, #fff2a4, #f3e595);
+    background-color: #fff2a4;
 
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 
-  position: relative;
+    position: relative;
 
-  height: 100vh;
+    height: 100vh;
 
-  font-family: "Capriola", sans-serif;
+    font-family: "Capriola", sans-serif;
 
-  perspective: 1000px;
+    perspective: 1000px;
 }
 
 h1,
@@ -52,304 +48,296 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Marker", sans-serif;
+    font-family: "Marker", sans-serif;
 }
 
 h2:before {
-  content: "~ ";
+    content: "~ ";
 }
 
 h2:after {
-  content: " ~";
+    content: " ~";
 }
 
 .main {
-  height: 100%;
+    height: 100%;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .nameImg {
-  height: 20%;
-  display: block;
-  cursor: pointer;
+    height: 20%;
+    display: block;
+    cursor: pointer;
 
-  transition: transform 0.1s ease, filter 0.1s ease;
+    transition: transform 0.1s ease, filter 0.1s ease;
 }
 
 .nameImg:hover {
-  transform: scale(1.1) rotateZ(-5deg);
-  filter: drop-shadow(
-    0 0 5px color-mix(in hsl, var(--color-capri-black-tone2), transparent 10%)
-  );
+    transform: scale(1.1) rotateZ(-5deg);
+    filter: drop-shadow(0 0 5px color-mix(in hsl, var(--color-capri-black-tone2), transparent 10%));
 }
 
 .nameImg:active {
-  transform: scale(0.8) rotateZ(-5deg);
+    transform: scale(0.8) rotateZ(-5deg);
 }
 
 .capriContainer {
-  height: 70%;
-  display: block;
-  position: relative;
+    height: 70%;
+    display: block;
+    position: relative;
 }
 
 .capri {
-  height: 100%;
+    height: 100%;
 }
 
 .poi {
-  position: absolute;
-  padding: 0;
-  box-sizing: content-box;
+    position: absolute;
+    padding: 0;
+    box-sizing: content-box;
 
-  opacity: 0.15;
+    opacity: 0.15;
 
-  min-width: 10px;
-  width: calc(100% * 0.03);
-  aspect-ratio: 1 / 1;
-  background-color: var(--color-capri-white);
-  border-radius: 50%;
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--color-capri-black-tone2);
+    min-width: 10px;
+    width: calc(100% * 0.03);
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-capri-white);
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--color-capri-black-tone2);
 
-  cursor: pointer;
+    cursor: pointer;
 
-  transition: opacity 0.1s ease, transform 0.1s ease, background-color 0.1s ease;
+    transition: opacity 0.1s ease, transform 0.1s ease, background-color 0.1s ease;
 }
 
 .capriContainer:hover .poi {
-  opacity: 0.75;
+    opacity: 0.75;
 }
 
 .poi:hover,
 .poi:focus {
-  opacity: 1 !important;
-  transform: scale(2);
-  background-color: var(--color-capri-blue);
+    opacity: 1 !important;
+    transform: scale(2);
+    background-color: var(--color-capri-blue);
 }
 
 /* Always show pois at 0.5 opacity for touchscreens */
 @media (pointer: coarse) {
-  .poi {
-    opacity: 0.5 !important;
-  }
+    .poi {
+        opacity: 0.5 !important;
+    }
 }
 
 /* Dialog styles */
 
 .detailsCloseButton {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 
-  background-color: var(--color-capri-black);
-  color: var(--color-capri-white);
+    background-color: var(--color-capri-black);
+    color: var(--color-capri-white);
 
-  font-size: 20px;
+    font-size: 20px;
 
-  border: none;
-  border-radius: 50%;
+    border: none;
+    border-radius: 50%;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  transition: background-color 0.1s ease;
+    transition: background-color 0.1s ease;
 
-  width: 32px;
-  height: 32px;
+    width: 32px;
+    height: 32px;
 }
 
 .detailsCloseButton:hover {
-  background-color: var(--color-capri-black-tone2);
-  color: var(--color-capri-blue);
+    background-color: var(--color-capri-black-tone2);
+    color: var(--color-capri-blue);
 }
 
 dialog {
-  width: 100%;
-  max-width: min(95%, 620px);
-  max-height: min(75%, 900px);
-  box-sizing: border-box;
+    width: 100%;
+    max-width: min(95%, 620px);
+    max-height: min(75%, 900px);
+    box-sizing: border-box;
 
-  background-color: var(--color-capri-white);
-  color: var(--color-capri-black-tone2);
-  line-height: 1.5rem;
+    background-color: var(--color-capri-white);
+    color: var(--color-capri-black-tone2);
+    line-height: 1.5rem;
 
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--color-capri-black);
-  border-radius: 12px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--color-capri-black);
+    border-radius: 12px;
 
-  animation-name: dialog-anim-in;
-  animation-duration: 0.35s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
+    animation-name: dialog-anim-in;
+    animation-duration: 0.35s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 
-  filter: drop-shadow(
-    0 0 10px color-mix(in hsl, var(--color-capri-black), transparent 50%)
-  );
+    filter: drop-shadow(0 0 10px color-mix(in hsl, var(--color-capri-black), transparent 50%));
 }
 
 @keyframes dialog-anim-in {
-  from {
-    transform: rotate3d(1, 0, 0, 20deg);
-    opacity: 0;
-  }
-  to {
-    transform: none;
-    opacity: 1;
-  }
+    from {
+        transform: rotate3d(1, 0, 0, 20deg);
+        opacity: 0;
+    }
+    to {
+        transform: none;
+        opacity: 1;
+    }
 }
 
 dialog::backdrop {
-  backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 dialog img {
-  max-width: min(200px, 90%);
+    max-width: min(200px, 90%);
 
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 dialog h2 {
-  text-align: center;
+    text-align: center;
 }
 
 dialog em {
-  color: var(--color-capri-blue-tone2);
-  font-style: normal;
+    color: var(--color-capri-blue-tone2);
+    font-style: normal;
 }
 
 hr {
-  margin-top: 20px;
-  border-color: var(--color-capri-black);
+    margin-top: 20px;
+    border-color: var(--color-capri-black);
 }
 
 .detailsNavButtons {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .btn {
-  background-color: var(--color-capri-black);
-  color: var(--color-capri-white);
+    background-color: var(--color-capri-black);
+    color: var(--color-capri-white);
 
-  border: none;
-  border-radius: 12px;
+    border: none;
+    border-radius: 12px;
 
-  padding: 10px 20px;
+    padding: 10px 20px;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease,
-    filter 0.1s ease;
+    transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease, filter 0.1s ease;
 
-  min-height: 60px;
+    min-height: 60px;
 
-  width: 100%;
-  max-width: min(200px, 40%);
-  font-size: 14px;
-  font-family: "Capriola";
+    width: 100%;
+    max-width: min(200px, 40%);
+    font-size: 14px;
+    font-family: "Capriola";
 }
 
 .btn:hover {
-  background-color: var(--color-capri-black-tone2);
-  color: var(--color-capri-blue);
-  filter: drop-shadow(
-    0 0 5px color-mix(in hsl, var(--color-capri-black), transparent 50%)
-  );
+    background-color: var(--color-capri-black-tone2);
+    color: var(--color-capri-blue);
+    filter: drop-shadow(0 0 5px color-mix(in hsl, var(--color-capri-black), transparent 50%));
 }
 
 .btn:active {
-  transform: translateY(2px);
+    transform: translateY(2px);
 }
 
 .img-title {
-  font-size: 11px;
-  color: var(--color-capri-black);
-  text-align: center;
-  font-style: italic;
+    font-size: 11px;
+    color: var(--color-capri-black);
+    text-align: center;
+    font-style: italic;
 }
 
 dialog a {
-  color: var(--color-capri-brown-tone2);
-  text-decoration: underline;
-  cursor: pointer;
+    color: var(--color-capri-brown-tone2);
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-  gap: 24px;
-  max-width: min(90vw, 1200px);
+    gap: 24px;
+    max-width: min(90vw, 1200px);
 
-  padding-bottom: 32px;
+    padding-bottom: 32px;
 }
 
 .galleryItem {
-  width: 200px;
-  flex-shrink: 0;
+    width: 200px;
+    flex-shrink: 0;
 }
 
 .galleryImage {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: block;
 
-  padding: 10px;
-  margin-bottom: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
 
-  background-color: var(--color-capri-white);
-  border-radius: 12px;
-  border-color: var(--color-capri-black-tone2);
-  border-style: solid;
-  border-width: 2px;
+    background-color: var(--color-capri-white);
+    border-radius: 12px;
+    border-color: var(--color-capri-black-tone2);
+    border-style: solid;
+    border-width: 2px;
 
-  box-sizing: border-box;
+    box-sizing: border-box;
 
-  box-shadow: inset 0 0 10px
-      color-mix(in hsl, var(--color-capri-black), transparent 50%),
-    0 0 10px color-mix(in hsl, var(--color-capri-black), transparent 50%);
+    box-shadow: inset 0 0 10px color-mix(in hsl, var(--color-capri-black), transparent 50%),
+        0 0 10px color-mix(in hsl, var(--color-capri-black), transparent 50%);
 }
 
 .galleryImage img {
-  width: 100%;
+    width: 100%;
 }
 
 .galleryTitle {
-  overflow-wrap: anywhere;
+    overflow-wrap: anywhere;
 }
 
 .galleryTitle > small {
-  color: var(--color-capri-black);
-  font-style: italic;
-  font-size: 10px;
+    color: var(--color-capri-black);
+    font-style: italic;
+    font-size: 10px;
 }
 
 .galleryAuthor {
-  color: var(--color-capri-black);
-  font-style: italic;
-  font-size: 10px;
+    color: var(--color-capri-black);
+    font-style: italic;
+    font-size: 10px;
 }
 
 @media (max-width: 600px) {
-  .galleryItem {
-    width: auto;
-    max-width: 120px;
-  }
+    .galleryItem {
+        width: auto;
+        max-width: 120px;
+    }
 
-  .galleryImage {
-    width: auto;
-    max-width: 120px;
-  }
+    .galleryImage {
+        width: auto;
+        max-width: 120px;
+    }
 }
