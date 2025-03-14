@@ -1,3 +1,4 @@
+/** @type {HTMLDialogElement} */
 const detailsDialogEl = document.getElementById("detailsDialog");
 const detailsDialogCloseEl = document.getElementById("detailsDialogClose");
 
@@ -72,9 +73,13 @@ function showDetailsModal(copyFromId) {
 }
 
 function closeDetailsModal() {
-    window.location.hash = "";
     detailsDialogEl.close();
 }
+
+detailsDialogEl.addEventListener("close", (e) => {
+    window.location.hash = "";
+    currentPoi = "";
+});
 
 function viewNextPoi() {
     const currentIndex = allPois.indexOf(currentPoi);
@@ -87,3 +92,13 @@ function viewPrevPoi() {
     const nextIndex = (currentIndex - 1 + allPois.length) % allPois.length;
     showPoi(allPois[nextIndex]);
 }
+
+document.addEventListener("keydown", (e) => {
+    if (detailsDialogEl.open && currentPoi !== "") {
+        if (e.key === "ArrowLeft") {
+            viewPrevPoi();
+        } else if (e.key === "ArrowRight") {
+            viewNextPoi();
+        }
+    }
+});
