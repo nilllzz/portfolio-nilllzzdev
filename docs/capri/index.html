@@ -1,264 +1,297 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta name="description" content="Capri's character sheet" />
-    <meta charset="utf-8" />
-    <title>Capri - nilllzz.dev</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="nilllzz" />
-    <meta name="theme-color" content="#4a7c88" />
+    <head>
+        <meta name="description" content="Capri's character sheet" />
+        <meta charset="utf-8" />
+        <title>Capri - nilllzz.dev</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="nilllzz" />
+        <meta name="theme-color" content="#4a7c88" />
 
-    <!-- Open Graph tags -->
-    <meta property="og:site_name" content="Capri's character sheet" />
-    <meta property="og:type" content="profile" />
-    <meta property="og:title" content="Capri's character sheet" />
-    <meta property="og:description" content="Capri - the Thresher Shark" />
-    <meta
-      property="og:image"
-      content="https://nilllzz.dev/capri/img/og_image.jpg"
-    />
-    <meta property="og:image:width" content="1000" />
-    <meta property="og:image:height" content="540" />
-    <meta property="og:url" content="https://nilllzz.dev/capri" />
-    <meta property="profile:username" content="nilllzz" />
+        <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Capri's character sheet" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:title" content="Capri's character sheet" />
+        <meta property="og:description" content="Capri - the Thresher Shark" />
+        <meta property="og:image" content="https://nilllzz.dev/capri/img/og_image.jpg" />
+        <meta property="og:image:width" content="1000" />
+        <meta property="og:image:height" content="540" />
+        <meta property="og:url" content="https://nilllzz.dev/capri" />
+        <meta property="profile:username" content="nilllzz" />
 
-    <!-- Twitter tags -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Capri's character sheet" />
-    <meta
-      property="twitter:description"
-      content="Capri's character sheet - the Thresher Shark"
-    />
-    <meta property="twitter:url" content="https://nilllzz.dev" />
-    <meta
-      property="twitter:image"
-      content="https://nilllzz.dev/capri/img/og_image.jpg"
-    />
-    <meta property="twitter:site" content="@nilllzz" />
-    <meta property="twitter:creator" content="@nilllzz" />
+        <!-- Twitter tags -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="Capri's character sheet" />
+        <meta
+            property="twitter:description"
+            content="Capri's character sheet - the Thresher Shark"
+        />
+        <meta property="twitter:url" content="https://nilllzz.dev" />
+        <meta property="twitter:image" content="https://nilllzz.dev/capri/img/og_image.jpg" />
+        <meta property="twitter:site" content="@nilllzz" />
+        <meta property="twitter:creator" content="@nilllzz" />
 
-    <link rel="stylesheet" href="./style.css" />
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-    ></script>
-    <script type="module" src="./script.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-  </head>
-  <body>
-    <img
-      id="header-name"
-      src="./img/name.png"
-      alt="Drag to rotate, scroll to zoom"
-    />
-    <div id="loading-text">
-      <img src="./img/stare.png" style="width: 48px" />
-      <br />
-      Loading Capri...
-    </div>
-    <model-viewer
-      src="./models/capri.glb"
-      alt="Capri"
-      camera-controls
-      shadow-intensity="1"
-      exposure="0.8"
-      camera-orbit="25deg 90deg 2.5m"
-      camera-target="0m 0.75m 0m"
-      min-camera-orbit="auto 0deg auto"
-      max-camera-orbit="auto 180deg auto"
-    >
-      <!-- auto-rotate -->
-      <button
-        class="hotspot pre-interaction"
-        slot="hotspot-scars"
-        data-position="0.16217880099808002m 0.6727204215133334m 0.21749198893912278m"
-        data-normal="0.3686150173137409m 0.11210698628375187m 0.9227973735534607m"
-        data-visibility-attribute="visible"
-      >
-        <span class="hotspot-dot"></span>
-        <span class="hotspot-tooltip">
-          <h2>Scars and Damage</h2>
-          <p>
-            <em>Capri</em> sustained a scar to his left pec and a chip to his
-            left ear during a territorial struggle with the local dragon.
-          </p>
-        </span>
-      </button>
+        <link rel="stylesheet" href="./style.css" />
+        <script
+            type="module"
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+        ></script>
+        <script type="module" src="./script.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    </head>
+    <body>
+        <img id="header-name" src="./img/name.png" alt="Drag to rotate, scroll to zoom" />
 
-      <button
-        class="hotspot pre-interaction"
-        slot="hotspot-jaw"
-        data-position="0.04531164201297627m 1.0249755876706743m 0.23277448902596998m"
-        data-normal="0.9338879676298197m -0.20797851970701356m 0.2908576958870505m"
-        data-visibility-attribute="visible"
-      >
-        <span class="hotspot-dot"></span>
-        <span class="hotspot-tooltip">
-          <h2>Jaw and Teeth</h2>
-          <p>
-            <strong>Be careful</strong>, <em>Capri's</em> strong jaw and sharp
-            teeth can easily tear through solid steel.
-          </p>
-          <!-- <img src="img/double_teeth.png" alt="Double teeth" /> -->
-          <p>
-            <em>Capri</em> possessses two rows of teeth. Teeth lost can be
-            regrown within a week's time.
-          </p>
-        </span>
-      </button>
+        <model-viewer
+            src="./models/capri.glb"
+            loading="eager"
+            poster="./models/capri-poster.jpg"
+            class="blurred"
+            alt="Capri"
+            camera-controls
+            shadow-intensity="1"
+            exposure="0.8"
+            camera-orbit="25deg 90deg 2.5m"
+            camera-target="0m 0.75m 0m"
+            min-camera-orbit="auto 0deg auto"
+            max-camera-orbit="auto 180deg auto"
+        >
+            <!-- auto-rotate -->
+            <button
+                class="hotspot pre-interaction"
+                slot="hotspot-scars"
+                data-position="0.16217880099808002m 0.6727204215133334m 0.21749198893912278m"
+                data-normal="0.3686150173137409m 0.11210698628375187m 0.9227973735534607m"
+                data-visibility-attribute="visible"
+            >
+                <span class="hotspot-dot"></span>
+                <span class="hotspot-tooltip">
+                    <h2>Scars and Damage</h2>
+                    <p>
+                        <em>Capri</em> sustained a scar to his left pec and a chip to his left ear
+                        during a territorial struggle with the local dragon.
+                    </p>
+                </span>
+            </button>
 
-      <button
-        class="hotspot pre-interaction"
-        slot="hotspot-eyes"
-        data-position="0.03754821663282262m 1.1051439237225253m 0.15993702564670037m"
-        data-normal="0.2986965839904952m 0.006319762262924623m 0.9543272034880643m"
-        data-visibility-attribute="visible"
-      >
-        <span class="hotspot-dot"></span>
-        <span class="hotspot-tooltip">
-          <h2>Eyes</h2>
-          <p>
-            <em>Capri's</em> big eyes help him stalk prey without losing sight
-            of them even in deep waters.
-          </p>
-        </span>
-      </button>
+            <button
+                class="hotspot pre-interaction"
+                slot="hotspot-jaw"
+                data-position="0.04531164201297627m 1.0249755876706743m 0.23277448902596998m"
+                data-normal="0.9338879676298197m -0.20797851970701356m 0.2908576958870505m"
+                data-visibility-attribute="visible"
+            >
+                <span class="hotspot-dot"></span>
+                <span class="hotspot-tooltip">
+                    <h2>Jaw and Teeth</h2>
+                    <p>
+                        <strong>Be careful</strong>, <em>Capri's</em> strong jaw and sharp teeth can
+                        easily tear through solid steel.
+                    </p>
+                    <!-- <img src="img/double_teeth.png" alt="Double teeth" /> -->
+                    <p>
+                        <em>Capri</em> possessses two rows of teeth. Teeth lost can be regrown
+                        within a week's time.
+                    </p>
+                </span>
+            </button>
 
-      <button
-        class="hotspot pre-interaction"
-        slot="hotspot-antlers"
-        data-position="0.025595435818276474m 1.3344309119404363m -0.059290463573932625m"
-        data-normal="0.6708179144301243m 0.7233570598760807m 0.16357838979232767m"
-        data-visibility-attribute="visible"
-      >
-        <span class="hotspot-dot"></span>
-        <span class="hotspot-tooltip">
-          <h2>Antlers</h2>
-          <p>Deer-like antlers protruding from <em>Capri's</em> head.</p>
-          <p>
-            These unique antlers give of an air of nobility. They also vibrate
-            if needed to allow for <strong>echolocation</strong>.
-          </p>
-        </span>
-      </button>
+            <button
+                class="hotspot pre-interaction"
+                slot="hotspot-eyes"
+                data-position="0.03754821663282262m 1.1051439237225253m 0.15993702564670037m"
+                data-normal="0.2986965839904952m 0.006319762262924623m 0.9543272034880643m"
+                data-visibility-attribute="visible"
+            >
+                <span class="hotspot-dot"></span>
+                <span class="hotspot-tooltip">
+                    <h2>Eyes</h2>
+                    <p>
+                        <em>Capri's</em> big eyes help him stalk prey without losing sight of them
+                        even in deep waters.
+                    </p>
+                </span>
+            </button>
 
-      <button
-        class="hotspot pre-interaction"
-        slot="hotspot-ears"
-        data-position="-0.1956140039554949m 1.1074701288096345m -0.04530700924566813m"
-        data-normal="-0.9127918485377919m -0.1593214351813333m 0.37606877234718816m"
-        data-visibility-attribute="visible"
-      >
-        <span class="hotspot-dot"></span>
-        <span class="hotspot-tooltip">
-          <h2>Ears</h2>
-          <p>
-            <em>Capri's</em> long ears allow for advanced hearing out of water
-            and on the surface.
-          </p>
-        </span>
-      </button>
+            <button
+                class="hotspot pre-interaction"
+                slot="hotspot-antlers"
+                data-position="0.025595435818276474m 1.3344309119404363m -0.059290463573932625m"
+                data-normal="0.6708179144301243m 0.7233570598760807m 0.16357838979232767m"
+                data-visibility-attribute="visible"
+            >
+                <span class="hotspot-dot"></span>
+                <span class="hotspot-tooltip">
+                    <h2>Antlers</h2>
+                    <p>Deer-like antlers protruding from <em>Capri's</em> head.</p>
+                    <p>
+                        These unique antlers give of an air of nobility. They also vibrate if needed
+                        to allow for <strong>echolocation</strong>.
+                    </p>
+                </span>
+            </button>
 
-      <button
-        class="hotspot pre-interaction"
-        slot="hotspot-tail"
-        data-position="0.044411136537982315m 0.031931796736347384m -0.531955680284459m"
-        data-normal="-0.6213233967037671m 0.7223926925304368m -0.30348976010257606m"
-        data-visibility-attribute="visible"
-      >
-        <span class="hotspot-dot"></span>
-        <span class="hotspot-tooltip">
-          <h2>Tail and Tail Fins</h2>
-          <p>
-            <em>Capri's</em> huge tail — charactaristic for a thresher shark —
-            is taller than him.
-          </p>
-          <p>
-            In combination with several fins, it provides superior
-            manueverability, stability and speed under water, allowing
-            <em>Capri</em> to swim unimpeded even through the toughest currents.
-          </p>
-          <p>
-            <em>Capri's</em> tail is warm and soft to the touch. He likes to
-            gently wrap it around you during a hug.
-          </p>
-        </span>
-      </button>
+            <button
+                class="hotspot pre-interaction"
+                slot="hotspot-ears"
+                data-position="-0.1956140039554949m 1.1074701288096345m -0.04530700924566813m"
+                data-normal="-0.9127918485377919m -0.1593214351813333m 0.37606877234718816m"
+                data-visibility-attribute="visible"
+            >
+                <span class="hotspot-dot"></span>
+                <span class="hotspot-tooltip">
+                    <h2>Ears</h2>
+                    <p>
+                        <em>Capri's</em> long ears allow for advanced hearing out of water and on
+                        the surface.
+                    </p>
+                </span>
+            </button>
 
-      <button
-        class="hotspot pre-interaction"
-        slot="hotspot-paws"
-        data-position="0.5316646425825965m 0.3362196154965143m -0.15031731469733542m"
-        data-normal="0.4533846537662524m 0.7972271574576443m 0.3985865215248255m"
-        data-visibility-attribute="visible"
-      >
-        <span class="hotspot-dot"></span>
-        <span class="hotspot-tooltip">
-          <h2>Paws</h2>
-          <p>
-            <em>Capri's</em> webbed paws help swimming on the water surface
-            while providing superior grip strength.
-          </p>
-          <p>Retractable nails on paw digits allow for clawing.</p>
-        </span>
-      </button>
+            <button
+                class="hotspot pre-interaction"
+                slot="hotspot-tail"
+                data-position="0.044411136537982315m 0.031931796736347384m -0.531955680284459m"
+                data-normal="-0.6213233967037671m 0.7223926925304368m -0.30348976010257606m"
+                data-visibility-attribute="visible"
+            >
+                <span class="hotspot-dot"></span>
+                <span class="hotspot-tooltip">
+                    <h2>Tail and Tail Fins</h2>
+                    <p>
+                        <em>Capri's</em> huge tail — charactaristic for a thresher shark — is taller
+                        than him.
+                    </p>
+                    <p>
+                        In combination with several fins, it provides superior manueverability,
+                        stability and speed under water, allowing
+                        <em>Capri</em> to swim unimpeded even through the toughest currents.
+                    </p>
+                    <p>
+                        <em>Capri's</em> tail is warm and soft to the touch. He likes to gently wrap
+                        it around you during a hug.
+                    </p>
+                </span>
+            </button>
 
-      <button
-        class="hotspot pre-interaction"
-        slot="hotspot-wingflaps"
-        data-position="-0.16461029417837048m 0.4848368714023032m 0.015268939851277613m"
-        data-normal="-0.0939753357750568m 0.4868286784554742m 0.8684275871362345m"
-        data-visibility-attribute="visible"
-      >
-        <span class="hotspot-dot"></span>
-        <span class="hotspot-tooltip">
-          <h2>Wingflaps</h2>
-          <p>
-            Wingflaps extend from underneat <em>Capri's</em> arms and can be
-            used to glide through the air.
-          </p>
-        </span>
-      </button>
+            <button
+                class="hotspot pre-interaction"
+                slot="hotspot-paws"
+                data-position="0.5316646425825965m 0.3362196154965143m -0.15031731469733542m"
+                data-normal="0.4533846537662524m 0.7972271574576443m 0.3985865215248255m"
+                data-visibility-attribute="visible"
+            >
+                <span class="hotspot-dot"></span>
+                <span class="hotspot-tooltip">
+                    <h2>Paws</h2>
+                    <p>
+                        <em>Capri's</em> webbed paws help swimming on the water surface while
+                        providing superior grip strength.
+                    </p>
+                    <p>Retractable nails on paw digits allow for clawing.</p>
+                </span>
+            </button>
 
-      <button
-        class="hotspot pre-interaction"
-        slot="hotspot-arms-legs"
-        data-position="0.17494424447139195m 0.22786919240137116m 0.44949048710126627m"
-        data-normal="0.37273384663474163m 0.8757800460288836m 0.3067226606407091m"
-        data-visibility-attribute="visible"
-      >
-        <span class="hotspot-dot"></span>
-        <span class="hotspot-tooltip">
-          <h2>Arms and Legs</h2>
-          <p>
-            Strong arms and legs that can be perfectly folded into the body for
-            better hydrodynamics. During diving and swimming the tail takes
-            over.
-          </p>
-          <p>The same applies during air gliding.</p>
-        </span>
-      </button>
+            <button
+                class="hotspot pre-interaction"
+                slot="hotspot-wingflaps"
+                data-position="-0.16461029417837048m 0.4848368714023032m 0.015268939851277613m"
+                data-normal="-0.0939753357750568m 0.4868286784554742m 0.8684275871362345m"
+                data-visibility-attribute="visible"
+            >
+                <span class="hotspot-dot"></span>
+                <span class="hotspot-tooltip">
+                    <h2>Wingflaps</h2>
+                    <p>
+                        Wingflaps extend from underneat <em>Capri's</em> arms and can be used to
+                        glide through the air.
+                    </p>
+                </span>
+            </button>
 
-      <button
-        class="hotspot pre-interaction"
-        slot="hotspot-lower-legs"
-        data-position="-0.5451611818799776m 0.14721737323312967m 0.3429644975699752m"
-        data-normal="-0.17641628739948045m 0.3696732339061472m 0.9122603760295386m"
-        data-visibility-attribute="visible"
-      >
-        <span class="hotspot-dot"></span>
-        <span class="hotspot-tooltip">
-          <h2>Arms and Legs</h2>
-          <p>
-            The lower legs resemble canine legs, with a digitigrade stance and
-            large paws.
-          </p>
-          <p>
-            Muscular calves and thighs provide the necessary power for jumping
-            and running.
-          </p>
-        </span>
-      </button>
-    </model-viewer>
-  </body>
+            <button
+                class="hotspot pre-interaction"
+                slot="hotspot-arms-legs"
+                data-position="0.17494424447139195m 0.22786919240137116m 0.44949048710126627m"
+                data-normal="0.37273384663474163m 0.8757800460288836m 0.3067226606407091m"
+                data-visibility-attribute="visible"
+            >
+                <span class="hotspot-dot"></span>
+                <span class="hotspot-tooltip">
+                    <h2>Arms and Legs</h2>
+                    <p>
+                        Strong arms and legs that can be perfectly folded into the body for better
+                        hydrodynamics. During diving and swimming the tail takes over.
+                    </p>
+                    <p>The same applies during air gliding.</p>
+                </span>
+            </button>
+
+            <button
+                class="hotspot pre-interaction"
+                slot="hotspot-lower-legs"
+                data-position="-0.5451611818799776m 0.14721737323312967m 0.3429644975699752m"
+                data-normal="-0.17641628739948045m 0.3696732339061472m 0.9122603760295386m"
+                data-visibility-attribute="visible"
+            >
+                <span class="hotspot-dot"></span>
+                <span class="hotspot-tooltip">
+                    <h2>Arms and Legs</h2>
+                    <p>
+                        The lower legs resemble canine legs, with a digitigrade stance and large
+                        paws.
+                    </p>
+                    <p>
+                        Muscular calves and thighs provide the necessary power for jumping and
+                        running.
+                    </p>
+                </span>
+            </button>
+        </model-viewer>
+
+        <model-viewer
+            src="./models/capri2.glb"
+            loading="lazy"
+            alt="Capri"
+            style="display: none"
+            camera-controls
+            shadow-intensity="1"
+            exposure="0.8"
+            camera-orbit="-10deg 100deg 2.5m"
+            camera-target="0m 0.8m 0m"
+            min-camera-orbit="auto 0deg auto"
+            max-camera-orbit="auto 180deg auto"
+        >
+        </model-viewer>
+
+        <model-viewer
+            src="./models/capri3.glb"
+            loading="lazy"
+            alt="Capri"
+            style="display: none"
+            camera-controls
+            shadow-intensity="1"
+            exposure="0.8"
+            camera-orbit="0deg 70deg 0.5m"
+            camera-target="0.5m 0.5m 0m"
+            min-camera-orbit="auto 0deg auto"
+            max-camera-orbit="auto 180deg auto"
+        >
+        </model-viewer>
+
+        <model-viewer
+            src="./models/capri4.glb"
+            loading="lazy"
+            alt="Capri"
+            style="display: none"
+            camera-controls
+            shadow-intensity="1"
+            exposure="0.8"
+            camera-orbit="-22deg 75deg 0.5m"
+            camera-target="0m 0.5m 0m"
+            min-camera-orbit="auto 0deg auto"
+            max-camera-orbit="auto 180deg auto"
+        >
+        </model-viewer>
+    </body>
 </html>
