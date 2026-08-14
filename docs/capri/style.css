@@ -1,45 +1,41 @@
 @font-face {
-    font-family: "Capriola";
-    src: url("./fonts/Capriola-Regular.ttf") format("truetype");
+  font-family: "Capriola";
+  src: url("./fonts/Capriola-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "Marker";
-    src: url("./fonts/marker.ttf") format("truetype");
+  font-family: "Marker";
+  src: url("./fonts/marker.ttf") format("truetype");
 }
 
 :root {
-    --color-capri-white: #edf2ff;
-    --color-capri-brown: #b97a57;
-    --color-capri-brown-tone2: #ab6d4c;
-    --color-capri-black: #323d47;
-    --color-capri-black-tone2: #222c34;
-    --color-capri-blue: #59a5c6;
-    --color-capri-blue-tone2: #4b8eab;
-    --color-capri-pink: #ffc6c3;
-    --color-capri-beige: #ffe6b5;
+  --color-capri-white: #edf2ff;
+  --color-capri-brown: #b97a57;
+  --color-capri-brown-tone2: #ab6d4c;
+  --color-capri-black: #323d47;
+  --color-capri-black-tone2: #222c34;
+  --color-capri-black-tone3: #1a2025;
+  --color-capri-blue: #59a5c6;
+  --color-capri-blue-tone2: #4b8eab;
+  --color-capri-pink: #ffc6c3;
+  --color-capri-beige: #ffe6b5;
 }
 
 *::selection {
-    background-color: color-mix(in hsl, var(--color-capri-black), transparent 75%);
-    color: var(--color-capri-black);
+  background-color: color-mix(
+    in hsl,
+    var(--color-capri-black),
+    transparent 75%
+  );
+  color: var(--color-capri-black);
 }
 
+html,
 body {
-    margin: 0;
-    background: linear-gradient(0.25turn, #fff2a4, #f3e595);
-    background-color: #fff2a4;
-
-    display: flex;
-    justify-content: center;
-
-    position: relative;
-
-    height: 100vh;
-
-    font-family: "Capriola", sans-serif;
-
-    perspective: 1000px;
+  margin: 0;
+  height: 100%;
+  font-family: "Capriola", sans-serif;
+  background-color: var(--color-capri-black);
 }
 
 h1,
@@ -48,296 +44,161 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Marker", sans-serif;
+  font-family: "Marker", sans-serif;
 }
 
 h2:before {
-    content: "~ ";
+  content: "~ ";
 }
 
 h2:after {
-    content: " ~";
+  content: " ~";
 }
 
-.main {
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+h2 {
+  margin-top: 4px;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
 }
 
-.nameImg {
-    height: 20%;
-    display: block;
-    cursor: pointer;
-
-    transition: transform 0.1s ease, filter 0.1s ease;
+model-viewer {
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(0.25turn, #fff2a4, #f3e595); */
+  /* background-color: #fff2a4; */
+  background-color: var(--color-capri-black);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  --progress-bar-height: 0px;
 }
 
-.nameImg:hover {
-    transform: scale(1.1) rotateZ(-5deg);
-    filter: drop-shadow(0 0 5px color-mix(in hsl, var(--color-capri-black-tone2), transparent 10%));
+model-viewer.loaded {
+  opacity: 1;
 }
 
-.nameImg:active {
-    transform: scale(0.8) rotateZ(-5deg);
+#header-name {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 200px;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.6s ease;
+
+  filter: drop-shadow(
+    0 0 15px color-mix(in hsl, var(--color-capri-black-tone2), transparent 5%)
+  );
 }
 
-.capriContainer {
-    height: 70%;
-    display: block;
-    position: relative;
+#header-name.hidden {
+  opacity: 0;
 }
 
-.capri {
-    height: 100%;
+#loading-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-capri-white);
+  font-family: "Capriola", sans-serif;
+  font-size: 14px;
+  opacity: 0.7;
+  pointer-events: none;
+  text-align: center;
+  line-height: 2;
 }
 
-.poi {
-    position: absolute;
-    padding: 0;
-    box-sizing: content-box;
+.hotspot {
+  width: 16px;
+  height: 16px;
 
-    opacity: 0.15;
-
-    min-width: 10px;
-    width: calc(100% * 0.03);
-    aspect-ratio: 1 / 1;
-    background-color: var(--color-capri-white);
-    border-radius: 50%;
-    border-width: 2px;
-    border-style: solid;
-    border-color: var(--color-capri-black-tone2);
-
-    cursor: pointer;
-
-    transition: opacity 0.1s ease, transform 0.1s ease, background-color 0.1s ease;
+  border-radius: 50%;
+  border: 2px solid var(--color-capri-white);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  padding: 0;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.15s ease;
+  z-index: 8;
+  position: relative;
 }
 
-.capriContainer:hover .poi {
-    opacity: 0.75;
+.hotspot:hover,
+.hotspot.active {
+  transform: scale(1.15);
+  background: color-mix(
+    in srgb,
+    var(--color-capri-blue-tone2) 70%,
+    transparent
+  );
 }
 
-.poi:hover,
-.poi:focus {
-    opacity: 1 !important;
-    transform: scale(2);
-    background-color: var(--color-capri-blue);
+.hotspot-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: min(60vw, 300px);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: color-mix(
+    in hsl,
+    var(--color-capri-black-tone3),
+    transparent 10%
+  );
+  color: white;
+  text-align: left;
+
+  font-family: "Capriola", sans-serif;
+  font-size: 12px;
+  z-index: 9;
+
+  backdrop-filter: blur(4px);
 }
 
-/* Always show pois at 0.5 opacity for touchscreens */
-@media (pointer: coarse) {
-    .poi {
-        opacity: 0.5 !important;
-    }
+.hotspot:hover .hotspot-tooltip,
+.hotspot.active .hotspot-tooltip {
+  display: block;
 }
 
-/* Dialog styles */
-
-.detailsCloseButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-
-    background-color: var(--color-capri-black);
-    color: var(--color-capri-white);
-
-    font-size: 20px;
-
-    border: none;
-    border-radius: 50%;
-
-    cursor: pointer;
-
-    transition: background-color 0.1s ease;
-
-    width: 32px;
-    height: 32px;
+/* model-viewer toggles the "visible" attribute via data-visibility-attribute
+   when the hotspot is occluded by the model (e.g. viewed from behind) */
+.hotspot:not([data-visible]) {
+  opacity: 0;
+  pointer-events: none;
 }
 
-.detailsCloseButton:hover {
-    background-color: var(--color-capri-black-tone2);
-    color: var(--color-capri-blue);
+.hotspot.dimmed {
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
-dialog {
-    width: 100%;
-    max-width: min(95%, 620px);
-    max-height: min(75%, 900px);
-    box-sizing: border-box;
-
-    background-color: var(--color-capri-white);
-    color: var(--color-capri-black-tone2);
-    line-height: 1.5rem;
-
-    border-width: 2px;
-    border-style: solid;
-    border-color: var(--color-capri-black);
-    border-radius: 12px;
-
-    animation-name: dialog-anim-in;
-    animation-duration: 0.35s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-
-    filter: drop-shadow(0 0 10px color-mix(in hsl, var(--color-capri-black), transparent 50%));
+.hotspot.pre-interaction {
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
-@keyframes dialog-anim-in {
-    from {
-        transform: rotate3d(1, 0, 0, 20deg);
-        opacity: 0;
-    }
-    to {
-        transform: none;
-        opacity: 1;
-    }
+body.hotspots-hidden .hotspot {
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
-dialog::backdrop {
-    backdrop-filter: blur(5px);
+.hotspot-tooltip em {
+  font-style: normal;
+  color: var(--color-capri-blue);
 }
 
-dialog img {
-    max-width: min(200px, 90%);
-
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-dialog h2 {
-    text-align: center;
-}
-
-dialog em {
-    color: var(--color-capri-blue-tone2);
-    font-style: normal;
-}
-
-hr {
-    margin-top: 20px;
-    border-color: var(--color-capri-black);
-}
-
-.detailsNavButtons {
-    display: flex;
-    justify-content: space-around;
-
-    margin-top: 20px;
-}
-
-.btn {
-    background-color: var(--color-capri-black);
-    color: var(--color-capri-white);
-
-    border: none;
-    border-radius: 12px;
-
-    padding: 10px 20px;
-
-    cursor: pointer;
-
-    transition: background-color 0.1s ease, color 0.1s ease, transform 0.1s ease, filter 0.1s ease;
-
-    min-height: 60px;
-
-    width: 100%;
-    max-width: min(200px, 40%);
-    font-size: 14px;
-    font-family: "Capriola";
-}
-
-.btn:hover {
-    background-color: var(--color-capri-black-tone2);
-    color: var(--color-capri-blue);
-    filter: drop-shadow(0 0 5px color-mix(in hsl, var(--color-capri-black), transparent 50%));
-}
-
-.btn:active {
-    transform: translateY(2px);
-}
-
-.img-title {
-    font-size: 11px;
-    color: var(--color-capri-black);
-    text-align: center;
-    font-style: italic;
-}
-
-dialog a {
-    color: var(--color-capri-brown-tone2);
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    gap: 24px;
-    max-width: min(90vw, 1200px);
-
-    padding-bottom: 32px;
-}
-
-.galleryItem {
-    width: 200px;
-    flex-shrink: 0;
-}
-
-.galleryImage {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    display: block;
-
-    padding: 10px;
-    margin-bottom: 10px;
-
-    background-color: var(--color-capri-white);
-    border-radius: 12px;
-    border-color: var(--color-capri-black-tone2);
-    border-style: solid;
-    border-width: 2px;
-
-    box-sizing: border-box;
-
-    box-shadow: inset 0 0 10px color-mix(in hsl, var(--color-capri-black), transparent 50%),
-        0 0 10px color-mix(in hsl, var(--color-capri-black), transparent 50%);
-}
-
-.galleryImage img {
-    width: 100%;
-}
-
-.galleryTitle {
-    overflow-wrap: anywhere;
-}
-
-.galleryTitle > small {
-    color: var(--color-capri-black);
-    font-style: italic;
-    font-size: 10px;
-}
-
-.galleryAuthor {
-    color: var(--color-capri-black);
-    font-style: italic;
-    font-size: 10px;
-}
-
-@media (max-width: 600px) {
-    .galleryItem {
-        width: auto;
-        max-width: 120px;
-    }
-
-    .galleryImage {
-        width: auto;
-        max-width: 120px;
-    }
+.hotspot-tooltip img {
+  display: block;
+  width: 50%;
+  filter: drop-shadow(
+    0 0 2px color-mix(in hsl, var(--color-capri-white), transparent 5%)
+  );
+  transform: translateX(50%);
 }
