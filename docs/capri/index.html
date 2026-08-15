@@ -32,6 +32,10 @@
         <meta property="twitter:creator" content="@nilllzz" />
 
         <link rel="stylesheet" href="./style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+        />
         <script
             type="module"
             src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
@@ -44,7 +48,7 @@
 
         <model-viewer
             src="./models/capri.glb"
-            loading="eager"
+            loading="auto"
             poster="./models/capri-poster.jpg"
             class="blurred"
             alt="Capri"
@@ -254,6 +258,7 @@
             loading="lazy"
             alt="Capri"
             style="display: none"
+            interaction-prompt="none"
             camera-controls
             shadow-intensity="1"
             exposure="0.8"
@@ -269,6 +274,7 @@
             loading="lazy"
             alt="Capri"
             style="display: none"
+            interaction-prompt="none"
             camera-controls
             shadow-intensity="1"
             exposure="0.8"
@@ -284,6 +290,7 @@
             loading="lazy"
             alt="Capri"
             style="display: none"
+            interaction-prompt="none"
             camera-controls
             shadow-intensity="1"
             exposure="0.8"
@@ -293,5 +300,33 @@
             max-camera-orbit="auto 180deg auto"
         >
         </model-viewer>
+
+        <model-viewer
+            src="./models/capri5.glb"
+            loading="lazy"
+            alt="Capri"
+            style="display: none"
+            interaction-prompt="none"
+            camera-controls
+            shadow-intensity="1"
+            exposure="0.8"
+            camera-orbit="30deg 75deg 0.5m"
+            camera-target="0.25m 1m 0m"
+            min-camera-orbit="auto 0deg auto"
+            max-camera-orbit="auto 180deg auto"
+        >
+        </model-viewer>
+
+        <div class="controls">
+            <a class="prev-model" href="#">
+                <i class="bi bi-caret-left"></i>
+            </a>
+            <a class="reset-model" href="#">
+                <i class="bi bi-arrow-clockwise"></i>
+            </a>
+            <a class="next-model" href="#">
+                <i class="bi bi-caret-right"></i>
+            </a>
+        </div>
     </body>
 </html>

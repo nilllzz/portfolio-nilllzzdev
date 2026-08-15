@@ -10,6 +10,7 @@
 
 :root {
     --color-capri-white: #edf2ff;
+    --color-capri-white-tone2: #c2c5cc;
     --color-capri-brown: #b97a57;
     --color-capri-brown-tone2: #ab6d4c;
     --color-capri-black: #323d47;
@@ -94,6 +95,37 @@ model-viewer.loaded {
     opacity: 0;
 }
 
+.controls {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 10px 24px;
+
+    background-color: color-mix(in hsl, var(--color-capri-white-tone2), transparent 75%);
+    backdrop-filter: blur(20px);
+    border-radius: 40px;
+    color: var(--color-capri-white);
+
+    font-size: 32px;
+
+    gap: 24px;
+
+    display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .controls {
+        display: flex;
+    }
+}
+
+.controls a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .hotspot {
     width: 16px;
     height: 16px;
@@ -152,6 +184,11 @@ model-viewer.loaded {
 
 .hotspot.dimmed {
     opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+body.hotspots-idle .hotspot {
+    opacity: 0;
     pointer-events: none !important;
 }
 

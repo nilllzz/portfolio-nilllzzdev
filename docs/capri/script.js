@@ -194,13 +194,81 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("keydown", (event) => {
     const numberKeyNumber = parseInt(event.key, 10);
     if (numberKeyNumber >= 1 && numberKeyNumber <= allModelViewers.length) {
-        currentModelViewer = allModelViewers[numberKeyNumber - 1];
-        allModelViewers.forEach((mv) => {
-            mv.modelViewer.style.display = "none";
-        });
-        currentModelViewer.modelViewer.style.display = "block";
-        currentModelViewer.reset();
+        setModel(numberKeyNumber - 1);
     }
+});
+
+function setModel(modelIndex) {
+    currentModelViewer = allModelViewers[modelIndex];
+    allModelViewers.forEach((mv) => {
+        mv.modelViewer.style.display = "none";
+    });
+    currentModelViewer.modelViewer.style.display = "block";
+    currentModelViewer.reset();
+}
+
+function prevModel() {
+    setModel(
+        (allModelViewers.indexOf(currentModelViewer) - 1 + allModelViewers.length) %
+            allModelViewers.length,
+    );
+}
+
+function nextModel() {
+    setModel((allModelViewers.indexOf(currentModelViewer) + 1) % allModelViewers.length);
+}
+
+document.querySelector(".prev-model").addEventListener("click", (event) => {
+    event.preventDefault();
+    prevModel();
+});
+
+document.querySelector(".next-model").addEventListener("click", (event) => {
+    event.preventDefault();
+    nextModel();
+});
+
+// Swap each control's caret icon to its filled variant while the pointer is
+// hovering or pressed on it, mirroring the anchor's :hover/:active state.
+function armFillOnHoverOrPress(anchor) {
+    const icon = anchor.querySelector("i");
+    const outlineClass = icon.classList[icon.classList.length - 1];
+    const fillClass = `${outlineClass}-fill`;
+
+    let hovering = false;
+    let pressing = false;
+    const sync = () => {
+        icon.classList.toggle(fillClass, hovering || pressing);
+        icon.classList.toggle(outlineClass, !(hovering || pressing));
+    };
+
+    anchor.addEventListener("pointerenter", () => {
+        hovering = true;
+        sync();
+    });
+    anchor.addEventListener("pointerleave", () => {
+        hovering = false;
+        pressing = false;
+        sync();
+    });
+    anchor.addEventListener("pointerdown", () => {
+        pressing = true;
+        sync();
+    });
+    ["pointerup", "pointercancel"].forEach((type) =>
+        anchor.addEventListener(type, () => {
+            pressing = false;
+            sync();
+        }),
+    );
+}
+
+armFillOnHoverOrPress(document.querySelector(".prev-model"));
+armFillOnHoverOrPress(document.querySelector(".next-model"));
+
+document.querySelector(".reset-model").addEventListener("click", (event) => {
+    event.preventDefault();
+    currentModelViewer.reset();
 });
 
 // --- Dev helper -------------------------------------------------------
