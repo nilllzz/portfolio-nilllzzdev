@@ -1,0 +1,1 @@
+gltf-transform optimize "<model>.glb" "<model>-optimized.glb" --compress draco --texture-compress webp

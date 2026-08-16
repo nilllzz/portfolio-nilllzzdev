@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta name="description" content="nilllzz' portfolio" />
@@ -39,45 +39,310 @@
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
         />
         <link rel="stylesheet" href="style.css" />
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <script
+            type="module"
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+        ></script>
+        <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     </head>
-
     <body>
-        <script src="index.js" lang="js"></script>
-
-        <div class="main-content-container">
-            <div class="main-content">
-                <div class="content">
-                    <img src="img/pfp.png" class="pfp" />
-                </div>
-                <div class="content">
-                    <h1>
-                        nilllzz
-                        <div class="h1-subline">
-                            Fullstack web developer &mdash; I love making websites
-                        </div>
+        <main class="main-content">
+            <div class="tile-grid">
+                <!-- Intro heading tile. -->
+                <div class="tile tile-black-tone3 tile-w2 intro-tile">
+                    <h1 style="margin-left: -4px">
+                        <span class="color-brand-1">nill</span
+                        ><span class="color-brand-2">lzz.</span
+                        ><span class="color-brand-3">dev</span>
                     </h1>
+
+                    <div id="intro-text">
+                        Hi, I'm nilllzz, I'm a developer!<br />Check out my stuff :3
+                    </div>
+
+                    <div class="intro-tile-colorbars override-tile-margin">
+                        <div class="bgcolor-brand-1"></div>
+                        <div class="bgcolor-brand-2"></div>
+                        <div class="bgcolor-brand-3"></div>
+                    </div>
                 </div>
-                <div class="content">
-                    <p>I am a software engineer, mainly dabbling in fullstack web development.</p>
-                    <p>
-                        You need help designing your portfolio or profile web appearance? Check out
-                        my <a href="https://github.com/nilllzz">GitHub</a> for projects I've done,
-                        or send me an <a href="mailto:contact@nilllzz.dev">email</a> to contact me.
-                    </p>
+
+                <!-- Capri tile -->
+                <a class="tile tile-black tile-h2 tile-w2 capri-tile" href="capri">
+                    <model-viewer
+                        id="capri-model"
+                        class="capri-model"
+                        src="./capri/models/capri4-optimized.glb"
+                        loading="auto"
+                        alt="Capri"
+                        shadow-intensity="1"
+                        exposure="0.8"
+                        camera-orbit="-5deg 80deg 1m"
+                        camera-target="0.18m 1m 0m"
+                        interaction-prompt="none"
+                        min-camera-orbit="auto auto 0m"
+                    >
+                    </model-viewer>
+
+                    <div class="capri-tile-content">
+                        <h2>Capri</h2>
+                        <p>Capri the Thresher Shark is my silly creature.</p>
+                        <p class="show-non-touch capri-tile-cta">
+                            Click to see more <i class="bi bi-arrow-right"></i>
+                        </p>
+                        <p class="show-on-touch capri-tile-cta">
+                            Tap to see more <i class="bi bi-arrow-right"></i>
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Contact tile -->
+                <div class="tile tile-black-tone3 tile-w2 tile-h2 contact-tile">
+                    <h2>Contact</h2>
+                    <p>If you're looking for me, here's how and where to find me.</p>
+                    <p>You can also find me on Discord: @nilllzz</p>
+                    <div class="contact-tile-links">
+                        <a
+                            href="https://github.com/nilllzz"
+                            class="contact-tile-link"
+                            title="GitHub"
+                            rel="nofollow noopener noreferrer"
+                        >
+                            <i class="bi bi-github"></i>
+                            nilllzz
+                        </a>
+                        <a
+                            href="https://instagram.com/capritheshark"
+                            class="contact-tile-link"
+                            title="Instagram"
+                            rel="nofollow noopener noreferrer"
+                        >
+                            <i class="bi bi-instagram"></i>
+                            @CapriTheShark
+                        </a>
+                        <a
+                            href="https://x.com/CapriTheShark"
+                            class="contact-tile-link"
+                            title="X.com"
+                            rel="nofollow noopener noreferrer"
+                        >
+                            <i class="bi bi-twitter-x"></i>
+                            @CapriTheShark
+                        </a>
+                        <a
+                            href="javascript:location='mailto:\u0063\u006f\u006e\u0074\u0061\u0063\u0074\u0040\u006e\u0069\u006c\u006c\u006c\u007a\u007a\u002e\u0064\u0065\u0076';void 0"
+                            class="contact-tile-link"
+                            title="Email"
+                        >
+                            <i class="bi bi-envelope-fill"></i>
+                            Email me
+                        </a>
+                    </div>
                 </div>
-                <div class="content content-dark">
-                    <a href="https://github.com/nilllzz" class="social-btn">
-                        <i class="bi bi-github"></i>
+
+                <!-- Blog tile -->
+                <div class="tile tile-h2 blog-tile">
+                    <a
+                        class="blog-article blog-article-1"
+                        href="blog/articles/nilllzzdev/2026-08-15-complete-website-refresh/"
+                    >
+                        <h2>Blog</h2>
+                        <div>Complete website refresh</div>
                     </a>
-                    <a href="https://x.com/nilllzz" class="social-btn">
-                        <i class="bi bi-twitter-x"></i>
+                    <a
+                        class="blog-article blog-article-next blog-article-2"
+                        href="blog/articles/nilllzzdev/2026-08-15-new-capri-website-presence/"
+                    >
+                        <div>New Capri presence!</div>
                     </a>
-                    <a href="mailto:contact@nilllzz.dev" class="social-btn">
-                        <i class="bi bi-envelope"></i>
+                    <a
+                        class="blog-article blog-article-next blog-article-3"
+                        href="blog/articles/vrchat/unity/textmesh pro/gradient-presets/"
+                    >
+                        <div>Unity/VRChat TextMesh...</div>
+                    </a>
+                    <a class="blog-article blog-article-next blog-article-4" href="blog/">
+                        <div>Read more <i class="bi bi-arrow-right"></i></div>
                     </a>
                 </div>
+
+                <div class="tile tile-black-tone3 tile-image">
+                    <img
+                        src="img/capri-swim-square.jpg"
+                        alt="Capri swimming in the ocean next to a Psyduck."
+                        class="wave-displacement"
+                    />
+                    <div class="tile-image-overlay"></div>
+
+                    <svg width="0" height="0" style="position: absolute">
+                        <filter id="wave-displace" x="-20%" y="-20%" width="140%" height="140%">
+                            <feImage
+                                href="./img/wave-displacement.png"
+                                x="0%"
+                                y="0%"
+                                width="140%"
+                                height="140%"
+                                result="wavemap"
+                            >
+                                <animate
+                                    attributeName="x"
+                                    values="0%;-20%;0%"
+                                    dur="8s"
+                                    repeatCount="indefinite"
+                                />
+                            </feImage>
+                            <feDisplacementMap
+                                in="SourceGraphic"
+                                in2="wavemap"
+                                scale="18"
+                                xChannelSelector="R"
+                                yChannelSelector="G"
+                            />
+                        </filter>
+                    </svg>
+                </div>
+
+                <div class="tile tile-black-tone3 tile-w2">
+                    <h2>Credits</h2>
+
+                    <p>Copyright &copy; 2026 nilllzz</p>
+                    <p>Open fonts licensed under Google Fonts</p>
+                </div>
+
+                <a
+                    class="tile tile-black-tone3 tile-project"
+                    href="https://kip.art/"
+                    target="_blank"
+                >
+                    <img
+                        src="img/project-kipart.png"
+                        alt="Hero art for the kip.art website showing a distressed dragon."
+                    />
+                    <div class="tile-image-overlay"></div>
+                    <div class="tile-project-content">
+                        <div class="tile-project-header">Project</div>
+                        <div class="tile-project-text">kip.art website design</div>
+                    </div>
+                </a>
+
+                <a
+                    class="tile tile-black-tone3 tile-project"
+                    href="https://juliandoes.art/"
+                    target="_blank"
+                >
+                    <img
+                        src="img/project-juliandoesart.png"
+                        alt="JulianDough's character prominently featured on his website."
+                    />
+                    <div class="tile-image-overlay"></div>
+                    <div class="tile-project-content">
+                        <div class="tile-project-header">Project</div>
+                        <div class="tile-project-text">JulianDough web presence</div>
+                    </div>
+                </a>
+
+                <a
+                    class="tile tile-black-tone3 tile-project"
+                    href="https://pokemon3d.net/"
+                    target="_blank"
+                >
+                    <img
+                        src="img/project-pokemon3d.png"
+                        alt="Pokemon3D logo on grassy background."
+                    />
+                    <div class="tile-image-overlay"></div>
+                    <div class="tile-project-content">
+                        <div class="tile-project-header">Project</div>
+                        <div class="tile-project-text">Pok&eacute;mon 3D</div>
+                    </div>
+                </a>
             </div>
-        </div>
+        </main>
+
+        <script>
+            const introTile = document.querySelector(".intro-tile");
+            const introText = document.getElementById("intro-text");
+
+            function splitIntoLetters(container) {
+                const letters = [];
+                const fragment = document.createDocumentFragment();
+
+                Array.from(container.childNodes).forEach((node) => {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        for (const char of node.textContent) {
+                            const span = document.createElement("span");
+                            span.className = "letter";
+                            span.textContent = char;
+                            fragment.appendChild(span);
+                            letters.push(span);
+                        }
+                    } else {
+                        fragment.appendChild(node);
+                    }
+                });
+
+                container.textContent = "";
+                container.appendChild(fragment);
+                return letters;
+            }
+
+            const introLetters = splitIntoLetters(introText);
+            const introCursor = document.createElement("span");
+            introCursor.className = "intro-cursor";
+            let introRevealTimers = [];
+
+            function showAllLetters() {
+                introRevealTimers.forEach(clearTimeout);
+                introRevealTimers = [];
+                introLetters.forEach((letter) => letter.classList.remove("letter-hidden"));
+                introCursor.remove();
+            }
+
+            function playIntroTypewriter() {
+                introRevealTimers.forEach(clearTimeout);
+                introRevealTimers = [];
+                introLetters.forEach((letter) => letter.classList.add("letter-hidden"));
+                introText.insertBefore(introCursor, introText.firstChild);
+                introLetters.forEach((letter, i) => {
+                    introRevealTimers.push(
+                        setTimeout(() => {
+                            letter.classList.remove("letter-hidden");
+                            letter.insertAdjacentElement("afterend", introCursor);
+                        }, i * 30),
+                    );
+                });
+            }
+
+            introTile.addEventListener("mouseenter", playIntroTypewriter);
+            introTile.addEventListener("mouseleave", showAllLetters);
+
+            const capriModel = document.getElementById("capri-model");
+
+            const baseTheta = -5; // deg, matches initial camera-orbit
+            const amplitude = 4; // deg, how far it sways left/right
+            const periodMs = 6000; // ms per full left-right-left cycle
+
+            let userInteracting = false;
+            let resumeTimeout;
+
+            capriModel.addEventListener("camera-change", (event) => {
+                if (event.detail.source === "user-interaction") {
+                    userInteracting = true;
+                    clearTimeout(resumeTimeout);
+                    resumeTimeout = setTimeout(() => {
+                        userInteracting = false;
+                    }, 3000);
+                }
+            });
+
+            function animateSway(time) {
+                if (!userInteracting) {
+                    const theta = baseTheta + amplitude * Math.sin((time / periodMs) * Math.PI * 2);
+                    capriModel.cameraOrbit = `${theta}deg 90deg 3m`;
+                }
+                requestAnimationFrame(animateSway);
+            }
+            requestAnimationFrame(animateSway);
+        </script>
     </body>
 </html>
