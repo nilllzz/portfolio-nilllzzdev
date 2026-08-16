@@ -1,0 +1,34 @@
+{
+    "article": {
+        "title": "\"Array.Sort\" is not exposed to Udon?",
+        "slug": "array-sort-is-not-exposed",
+        "location": "VRChat/Udon",
+        "body": [
+            {
+                "type": "markdown",
+                "content": [
+                    "Have you ever wanted to use [`System.Array.Sort`](https://learn.microsoft.com/en-us/dotnet/api/system.array.sort) in your UdonSharp project and ran into this error message?",
+                    "![Unity error message](resource:error-message.png)",
+                    "Your code probably looked something like this:",
+                    [
+                        "```csharp",
+                        "var myArray = new int[] { 1, 2, 3 };",
+                        "System.Array.Sort(myArray);",
+                        "```"
+                    ],
+                    "The error stems from the fact that C# by default assumes you are using `Array.Sort<T>(T[])`, NOT `Array.Sort(Array)`, the former of which is not exposed to Udon.",
+                    "To fix this issue, simply upcast your array to `System.Array` explicitly before calling `Sort`:",
+                    [
+                        "```csharp",
+                        "var myArray = new int[] { 1, 2, 3 };",
+                        "System.Array.Sort((System.Array)myArray);",
+                        "```"
+                    ]
+                ]
+            }
+        ],
+        "resources": ["error-message.png"],
+        "tags": ["VRChat", "Udon", "UdonSharp", "Quirks"],
+        "published": "2026-04-16 07:08:00 UTC"
+    }
+}

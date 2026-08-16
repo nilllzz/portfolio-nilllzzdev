@@ -1,0 +1,74 @@
+{
+    "article": {
+        "title": "Arrays and FieldChangeCallback",
+        "slug": "arrays-and-fieldchangecallback",
+        "location": "VRChat/Udon/Networking",
+        "body": [
+            {
+                "type": "markdown",
+                "content": [
+                    "Are you planning on syncing your data in UdonSharp using [`FieldChangeCallback`](https://udonsharp.docs.vrchat.com/udonsharp/#fieldchangecallback) and want to use arrays in your synced data?",
+                    "Be aware that the `FieldChangeCallback` only fires if the length of the array has changed.    \nIf only the contents of the entries of the array change, but the length of remains the same, Udon does not reassign the array reference.    \nSince `FieldChangeCallback` only fires on variable reassignment, it does not fire if only the contents of entries of the array change.",
+                    "Instead, use [`OnDeserialization`](https://creators.vrchat.com/worlds/udon/networking/network-components/#ondeserialization).",
+                    "Example of code that will not fire the callback:",
+                    [
+                        "```csharp",
+                        "[UdonSynced, FieldChangeCallback(nameof(MyData))]",
+                        "private int[] _myData = new int[2];",
+                        "public int[] MyData {",
+                        "    get => _myData;",
+                        "    set {",
+                        "        _myData = value;",
+                        "        DoSomething();",
+                        "    }",
+                        "}",
+                        "",
+                        "...",
+                        "",
+                        "// Running on a different player's client:",
+                        "Networking.SetOwner(Networking.LocalPlayer, gameObject);",
+                        "",
+                        "// This will not fire the FieldChangeCallback, since the array reference is not changed.",
+                        "MyData[0] = 1;",
+                        "RequestSerialization();",
+                        "",
+                        "// This will also not fire the callback on the remote player's end. The array length is the same and Udon does not reassign the reference.",
+                        "// It will run the setter on the local player's end, which can make this even more deceiving.",
+                        "MyData = new int[2] { 2, 3 };",
+                        "RequestSerialization();",
+                        "",
+                        "// This will fire the callback because the length is different.",
+                        "MyData = new int[3] { 1, 2, 3 };",
+                        "RequestSerialization();",
+                        "```"
+                    ],
+                    "Instead, set it up like this:",
+                    [
+                        "```csharp",
+                        "[UdonSynced]",
+                        "public int[] MyData = new int[2];",
+                        "",
+                        "...",
+                        "",
+                        "public override void OnDeserialization() {",
+                        "    DoSomething(); // This will fire whenever the data is updated, regardless of whether the array reference changed or not.",
+                        "}",
+                        "",
+                        "...",
+                        "",
+                        "// Running on a different player's client:",
+                        "Networking.SetOwner(Networking.LocalPlayer, gameObject);",
+                        "MyData[0] = 1;",
+                        "RequestSerialization();",
+                        "```"
+                    ],
+                    "You can alternatively include the setter so the `DoSomething()` code runs on the object owner's client immediately instead of having to wait for `OnDeserialization`.",
+                    "[(1)](https://ask.vrchat.com/t/fieldchangecallback-arrays/42701) reference"
+                ]
+            }
+        ],
+        "resources": [],
+        "tags": ["VRChat", "Udon", "UdonSharp", "Networking"],
+        "published": "2026-04-16 09:20:00 UTC"
+    }
+}

@@ -1,35 +1,3 @@
-@font-face {
-    font-family: "Heading";
-    src: url("./fonts/Silkscreen-Bold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Body";
-    src: url("./fonts/ChakraPetch-Medium.ttf") format("truetype");
-}
-
-:root {
-    --color-capri-white: #edf2ff;
-    --color-capri-white-tone2: #c2c5cc;
-    --color-capri-brown: #b97a57;
-    --color-capri-brown-tone2: #ab6d4c;
-    --color-capri-black: #323d47;
-    --color-capri-black-tone2: #222c34;
-    --color-capri-black-tone3: #1a2025;
-    --color-capri-blue: #59a5c6;
-    --color-capri-blue-tone2: #4b8eab;
-    --color-capri-pink: #ffc6c3;
-    --color-capri-beige: #ffe6b5;
-
-    --color-brand-1: #005482;
-    --color-brand-2: #f3a63c;
-    --color-brand-3: #fd002c;
-
-    --tile-size-base: 160px;
-    --tile-gap-size: 30px;
-    --tile-border-radius: 36px;
-}
-
 html,
 body {
     margin: 0;
@@ -37,8 +5,22 @@ body {
 }
 
 body {
-    background-color: var(--color-capri-black-tone2);
     font-family: "Body", sans-serif;
+
+    background-color: var(--color-capri-black-tone2);
+    background-image: url("./img/bg-pattern.png");
+    background-repeat: repeat;
+    background-position: 10px 10px;
+    animation: scroll-bg 40s linear infinite;
+}
+
+@keyframes scroll-bg {
+    0% {
+        background-position: 10px 10px;
+    }
+    100% {
+        background-position: 410px 410px;
+    }
 }
 
 h1,
@@ -76,25 +58,11 @@ h2::before {
 
     display: flex;
     justify-content: center;
-
-    background-image: url("./img/bg-pattern.png");
-    background-repeat: repeat;
-    background-position: 10px 10px;
-    animation: scroll-bg 40s linear infinite;
 }
 
 @media (max-width: 900px) {
     .main-content {
         padding-top: 40px;
-    }
-}
-
-@keyframes scroll-bg {
-    0% {
-        background-position: 10px 10px;
-    }
-    100% {
-        background-position: 410px 410px;
     }
 }
 
@@ -106,38 +74,6 @@ h2::before {
     .intro-cursor {
         animation: none;
     }
-}
-
-.color-brand-1 {
-    color: var(--color-brand-1);
-}
-
-.color-brand-2 {
-    color: var(--color-brand-2);
-}
-
-.color-brand-3 {
-    color: var(--color-brand-3);
-}
-
-.bgcolor-brand-1 {
-    background-color: var(--color-brand-1);
-}
-
-.bgcolor-brand-2 {
-    background-color: var(--color-brand-2);
-}
-
-.bgcolor-brand-3 {
-    background-color: var(--color-brand-3);
-}
-
-.show-on-touch {
-    display: none;
-}
-
-.show-non-touch {
-    display: none;
 }
 
 @media (hover: none) and (pointer: coarse) {

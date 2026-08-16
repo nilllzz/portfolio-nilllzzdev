@@ -1,0 +1,16 @@
+{
+    "name": "portfolio-nilllzzdev",
+    "version": "1.0.0",
+    "main": "src/blog/index.mjs",
+    "scripts": {
+        "compile": "node src/blog/index.mjs"
+    },
+    "repository": "git@github.com:nilllzz/portfolio-nilllzzdev.git",
+    "author": "nilllzz <nidresch@googlemail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "he": "^1.2.0",
+        "markdown-it": "^14.1.1",
+        "markdown-it-link-attributes": "^4.0.1"
+    }
+}

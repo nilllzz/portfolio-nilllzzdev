@@ -1,0 +1,19 @@
+{
+    "article": {
+        "title": "Partial Classes in UdonSharp?",
+        "slug": "partial-classes",
+        "location": "VRChat/Udon",
+        "body": [
+            {
+                "type": "markdown",
+                "content": [
+                    "Can you use [C# partial classes](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) in UdonSharp without issues?",
+                    "Test link: [test](/blog/articles/vrchat/udon/array-sort-is-not-exposed)"
+                ]
+            }
+        ],
+        "resources": [],
+        "tags": ["VRChat", "Udon", "UdonSharp"],
+        "published": "2026-04-16 09:05:00 UTC"
+    }
+}

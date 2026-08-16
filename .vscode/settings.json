@@ -1,0 +1,19 @@
+{
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "src[\\/\\\\]blog[\\/\\\\].+\\.json$",
+                "cmd": "yarn compile"
+            },
+            {
+                "match": "src[\\/\\\\]blog[\\/\\\\].+\\.html$",
+                "cmd": "yarn compile"
+            },
+            {
+                "match": "src[\\/\\\\]blog[\\/\\\\].+\\.css$",
+                "cmd": "yarn compile"
+            }
+        ]
+    },
+    "liveServer.settings.root": "/docs"
+}

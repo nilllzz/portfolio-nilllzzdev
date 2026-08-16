@@ -1,0 +1,28 @@
+{
+    "article": {
+        "title": "Using TextMesh Pro Gradient Presets with Unity/VRChat",
+        "slug": "gradient-presets",
+        "location": "VRChat/Unity/TextMesh Pro",
+        "body": [
+            {
+                "type": "markdown",
+                "content": [
+                    "Creating and using **TMP Color Gradient Presets** in Unity for VRChat is easy enough and works just like every other Unity project.",
+                    "After creating a gradient preset, you can assign it in the inspector of a TextMesh Pro component.",
+                    "![Project](resource:project.png)",
+                    "![Inspector](resource:inspector.png)",
+                    "However, it is not possible to dynamically load a gradient preset using inline styling, as VRChat does not include `Resources/` folders during compilation.",
+                    "Example that does not work:",
+                    [
+                        "```csharp",
+                        "textMeshProComponent.text = \"<gradient=\\\"Header\\\">This text will not be colored with the gradient preset.</gradient>\";",
+                        "```"
+                    ]
+                ]
+            }
+        ],
+        "resources": ["inspector.png", "project.png"],
+        "tags": ["VRChat", "Unity", "TextMesh Pro"],
+        "published": "2026-04-16 09:42:00 UTC"
+    }
+}

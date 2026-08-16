@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="description" content="Read article now on nilllzz.dev" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="nilllzz" />
+        <meta name="theme-color" content="#4a7c88" />
+
+        <!-- Open Graph tags -->
+        <meta property="og:site_name" content="nilllzz' portfolio" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:title" content="{{ TITLE }}" />
+        <meta
+            property="og:description"
+            content="I am a fullstack software engineer, I love designing and implementing websites"
+        />
+        <meta property="og:image" content="https://nilllzz.dev/img/og_image.jpg" />
+        <meta property="og:image:width" content="1000" />
+        <meta property="og:image:height" content="540" />
+        <meta property="og:url" content="{{ URL }}" />
+        <meta property="profile:username" content="nilllzz" />
+
+        <!-- Twitter tags -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content="{{ TITLE }}" />
+        <meta
+            property="twitter:description"
+            content="I am a fullstack software engineer, I love designing and implementing websites"
+        />
+        <meta property="twitter:url" content="{{ URL }}" />
+        <meta property="twitter:image" content="https://nilllzz.dev/img/og_image.jpg" />
+        <meta property="twitter:site" content="@nilllzz" />
+        <meta property="twitter:creator" content="@nilllzz" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+        <link rel="stylesheet" href="/common.css" />
+        <link rel="stylesheet" href="/blog/style.css" />
+        <link rel="icon" type="image/x-icon" href="/blog/favicon.ico" />
+
+        <!-- Highlight.js -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/csharp.min.js"></script>
+
+        <title>{{ TITLE }} — nilllzz.dev</title>
+    </head>
+    <body>
+        <div class="layout-wrapper">
+            <div class="layout-container">
+                <main class="layout-main">{{ PAGE }}</main>
+                <nav class="layout-nav">
+                    <div><img src="/img/under-construction.webp" /><br /><br /></div>
+                    <div class="layout-tile intro-tile">
+                        <h1 style="margin-left: -4px">
+                            <span class="color-brand-1">nill</span
+                            ><span class="color-brand-2">lzz.</span
+                            ><span class="color-brand-3">dev</span>
+                        </h1>
+
+                        <div id="intro-text">
+                            Hi, I'm nilllzz, I'm a developer!<br />Check out my stuff :3
+                        </div>
+
+                        <div class="intro-tile-colorbars override-tile-margin">
+                            <div class="bgcolor-brand-1"></div>
+                            <div class="bgcolor-brand-2"></div>
+                            <div class="bgcolor-brand-3"></div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
