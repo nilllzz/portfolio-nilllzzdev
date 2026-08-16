@@ -81,6 +81,8 @@ async function renderIndexPage(layoutTemplate, articlesData) {
         const publishedOnFormatted = `<span title="${articleData.article.published}">${publishedOnDate.toDateString()}</span>`;
         articleHtml = articleHtml.replace("{{ PUBLISHED }}", publishedOnFormatted);
 
+        articleHtml = await processArticleResources("", articleHtml, articleData, false);
+
         indexContent += articleHtml + "\n";
     }
 
@@ -135,7 +137,7 @@ async function renderArticleFileSystem(
 
     let browseCategoriesHtml = "";
     if (categories.length > 0) {
-        browseCategoriesHtml = "<h2>Categories</h2><ul>";
+        browseCategoriesHtml = "<h3>Categories</h3><ul>";
         for (const category of categories) {
             browseCategoriesHtml += `<li><a href="${category.toLowerCase()}">${category}</a></li>`;
         }
@@ -146,7 +148,7 @@ async function renderArticleFileSystem(
 
     let browseArticlesHtml = "";
     if (articles.length > 0) {
-        browseArticlesHtml = "<h2>Articles</h2><ul>";
+        browseArticlesHtml = "<h3>Articles</h3><ul>";
         for (const articleData of articles) {
             const articleSlug = getArticleSlug(articleData);
             browseArticlesHtml += `<li><a href="${articleSlug.toLowerCase()}">${articleData.article.title}</a></li>`;
@@ -293,7 +295,7 @@ async function getAllArticles() {
     return articleFiles;
 }
 
-async function processArticleResources(articleFile, articleHtml, articleData) {
+async function processArticleResources(articleFile, articleHtml, articleData, copyFiles = true) {
     var resources = articleData.article.resources;
     var articleLocation = articleData.article.location;
     var articleSlug = getArticleSlug(articleData);
@@ -307,11 +309,13 @@ async function processArticleResources(articleFile, articleHtml, articleData) {
             resource,
         );
 
-        var articleFolder = path.dirname(articleFile);
-        var resourceSourcePath = path.join(sourcePath, articleFolder, resource);
+        if (copyFiles) {
+            var articleFolder = path.dirname(articleFile);
+            var resourceSourcePath = path.join(sourcePath, articleFolder, resource);
 
-        fs.mkdirSync(path.dirname(resourceOutputPath), { recursive: true });
-        fs.copyFileSync(resourceSourcePath, resourceOutputPath);
+            fs.mkdirSync(path.dirname(resourceOutputPath), { recursive: true });
+            fs.copyFileSync(resourceSourcePath, resourceOutputPath);
+        }
 
         var resourceUrl =
             "/blog/img/articles/" + articleLocation + "/" + articleSlug + "/" + resource;

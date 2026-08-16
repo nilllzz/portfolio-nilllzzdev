@@ -1,15 +1,20 @@
 {
     "article": {
         "title": "Complete website refresh",
-        "slug": "2026-08-15-complete-website-refresh",
+        "slug": "2026-08-16-complete-website-refresh",
         "location": "nilllzzdev",
         "body": [
             {
                 "type": "markdown",
-                "content": ["test"]
+                "content": [
+                    "After refreshing [Capri's presence](/capri) the rest of the website has been updated as well to match the new style.",
+                    "![New design](resource:new-design.png)",
+                    "I've also finally sat down to create a proper blog as part of the website so I can write down my thoughts and findings that no one ever reads.",
+                    "It still needs some design/engineering work, but it works pretty well right now."
+                ]
             }
         ],
-        "resources": [],
+        "resources": ["new-design.png"],
         "tags": ["nilllzzdev"],
         "published": "2026-08-16 01:28:00 UTC"
     }

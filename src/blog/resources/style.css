@@ -226,6 +226,30 @@ pre > code.hljs {
     border-left-style: solid;
 }
 
-.article-body p img {
+.article-body p img,
+.index-blog-article-body p img {
     border-radius: 8px;
+    max-width: 100%;
+}
+
+.browse-tile ul li a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.browse-tile ul li a:hover {
+    color: var(--color-capri-blue);
+}
+
+.browse-tile h3::before {
+    content: "// ";
+    letter-spacing: -6px;
+    padding-right: 6px;
+}
+
+.browse-category-subtitle {
+    font-size: 12px;
+    margin-bottom: -28px;
+    color: var(--color-capri-white-tone2);
 }
