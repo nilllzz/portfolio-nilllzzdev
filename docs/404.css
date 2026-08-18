@@ -52,6 +52,11 @@ body {
     display: none;
 }
 
+.touch-overlay pre {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
 @media (hover: none) and (pointer: coarse) {
     .touch-overlay {
         display: block;
