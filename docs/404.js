@@ -108,7 +108,7 @@ async function processCommand(command) {
 }
 
 function getGotoLocation(goOption) {
-    while (goOption.endsWith("/")) {
+    while (goOption.endsWith("/") && goOption.length > 1) {
         goOption = goOption.substring(0, goOption.length - 2);
     }
 
